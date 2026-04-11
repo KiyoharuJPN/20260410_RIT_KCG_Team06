@@ -20,7 +20,7 @@ MonoBehaviour:
   scorePerCoin: 100
   scorePerEnemyDefeat: 300
   timeLimit: 60
-  feverGaugeAmount: 100
-  feverPerCoin: 5
-  feverPerEnemyDefeat: 10
-  feverDecreasePerSecondDuringFever: 15
+  feverGaugeAmount: 18
+  feverPerCoin: 1
+  feverPerEnemyDefeat: 2
+  feverDecreasePerSecondDuringFever: 0.6
