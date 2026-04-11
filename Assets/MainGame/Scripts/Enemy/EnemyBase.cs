@@ -16,7 +16,7 @@ public class EnemyBase : MonoBehaviour
     protected int enemyID = 0;
 
     // アニメータの初期化
-    virtual protected void OnEnable()
+    virtual protected void Start()
     {
         animator = GetComponent<Animator>();
     }
@@ -33,7 +33,7 @@ public class EnemyBase : MonoBehaviour
             {
                 // 敵が倒されたときの処理
                 ResultManager.Instance.AddKill(); // キルカウントを増やす
-                gameObject.SetActive(false); // 敵オブジェクトを非アクティブ化
+                Destroy(gameObject); // 敵オブジェクトを非アクティブ化
             }
         }
 

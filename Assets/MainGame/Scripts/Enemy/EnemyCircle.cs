@@ -11,6 +11,11 @@ public class EnemyCircle : EnemyRepetition
 
     private void FixedUpdate()
     {
+        CalcEnemyMovement();
+    }
+
+    override protected void CalcEnemyMovement()
+    {
         float x = Mathf.Cos(Time.time * moveSpeed) * distance;
         float y = Mathf.Sin(Time.time * moveSpeed) * distance;
 

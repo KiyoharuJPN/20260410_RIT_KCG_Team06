@@ -14,4 +14,9 @@ public class EnemyRepetition : EnemyBase
         base.Start();
         movePivot = transform.localPosition;
     }
+
+    virtual protected void CalcEnemyMovement()
+    {
+
+    }
 }

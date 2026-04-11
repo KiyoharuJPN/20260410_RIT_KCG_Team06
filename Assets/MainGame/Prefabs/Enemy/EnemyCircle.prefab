@@ -177,4 +177,4 @@ MonoBehaviour:
   hp: 1
   enemyID: 4
   moveSpeed: 2
-  distance: 2
+  distance: 1
