@@ -24,11 +24,6 @@ public class EnemyBase : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // プレイヤーにダメージを与える処理
-
-        }
-
-        if (collision.gameObject.CompareTag("PlayerAttack"))
-        {
             // ダメージ処理
             hp -= 1f; // 仮のダメージ値
             if (hp <= 0)
@@ -38,6 +33,18 @@ public class EnemyBase : MonoBehaviour
                 Destroy(gameObject); // 敵オブジェクトを破壊
             }
         }
+
+        //if (collision.gameObject.CompareTag("PlayerAttack"))
+        //{
+        //    // ダメージ処理
+        //    hp -= 1f; // 仮のダメージ値
+        //    if (hp <= 0)
+        //    {
+        //        // 敵が倒されたときの処理
+        //        ResultManager.Instance.AddKill(); // キルカウントを増やす
+        //        Destroy(gameObject); // 敵オブジェクトを破壊
+        //    }
+        //}
     }
 
 

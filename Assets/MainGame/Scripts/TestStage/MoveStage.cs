@@ -1,0 +1,45 @@
+using UnityEngine;
+
+public class MoveStage : MonoBehaviour
+{
+    [Tooltip("移動の速さ")]
+    public float moveSpeed = 2f;
+    [Tooltip("移動の距離")]
+    public float distance = 2;
+    // 移動の基準点
+    protected Vector2 movePivot = Vector2.zero;
+    // Frameごとの移動量を計算するための変数
+    Vector2 movedDisplacement = Vector2.zero;
+
+    protected virtual void Start()
+    {
+        // 基準点を初期化
+        movePivot = transform.localPosition;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // プレイヤーが接触している場合、プレイヤーを移動させる
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // プレイヤーを移動させる
+            if (collision.gameObject.TryGetComponent(out Rigidbody2D rb))
+            {
+                if(rb.linearVelocityY == 0) // プレイヤーがジャンプしていない場合のみ移動させる
+                {
+                    rb.MovePosition(rb.position + movedDisplacement);
+                }
+            }
+        }
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        // 移動処理
+        Vector2 targetPosition = movePivot + new Vector2(Mathf.PingPong(Time.time * moveSpeed, distance), 0f); 
+        movedDisplacement = targetPosition - (Vector2)transform.localPosition;
+        transform.localPosition = targetPosition;
+
+    }
+}
