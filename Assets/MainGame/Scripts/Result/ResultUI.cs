@@ -1,15 +1,20 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class ResultUI : MonoBehaviour
 {
+    // score出力用
     [SerializeField]
     TMP_Text scoreText;
+    // kill数出力用
     [SerializeField]
     TMP_Text killText;
+    // coin数出力用
     [SerializeField]
     TMP_Text coinText;
+    // 次のステージへ遷移する旨のテキスト(アニメーションがあったらここで作る)
     [SerializeField]
     TMP_Text nextStage;
 
@@ -22,10 +27,10 @@ public class ResultUI : MonoBehaviour
         coinText.text = "Coins :                            5";// + ResultManager.coinCount.ToString();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return))
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
             // 次のステージへ遷移
             SceneManager.LoadScene("TitleScene");

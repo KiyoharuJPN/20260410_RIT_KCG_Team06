@@ -25,11 +25,13 @@ public class ResultManager : Singleton<ResultManager>
     {
         coinCount++;
         CalcScore();
+        Debug.Log($"Coin added! Current coin count: {coinCount}");
     }
     public void AddCoin(int amount)
     {
         coinCount += amount;
         CalcScore();
+        Debug.Log($"Coins added {amount} ! Current coin count: {coinCount}");
     }
 
     // キルカウント
@@ -37,16 +39,19 @@ public class ResultManager : Singleton<ResultManager>
     {
         killCount++;
         CalcScore();
+        Debug.Log($"Kill added! Current kill count: {killCount}");
     }
     public void AddKill(int amount)
     {
         killCount += amount;
         CalcScore();
+        Debug.Log($"Kills added {amount} ! Current kill count: {killCount}");
     }
 
     // スコア
     void CalcScore()
     {
         score = killCount * masterData.ScorePerEnemyDefeat + coinCount * masterData.ScorePerCoin;
+        Debug.Log($"Score calculated: {score} ");
     }
 }
