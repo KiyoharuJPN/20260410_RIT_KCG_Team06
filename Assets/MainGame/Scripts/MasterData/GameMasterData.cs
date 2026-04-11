@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "GameMasterData", menuName = "Scriptable Objects/GameMasterData")]
 public class GameMasterData : ScriptableObject
@@ -10,6 +10,12 @@ public class GameMasterData : ScriptableObject
     private float largeJumpPower = 12.0f;
     [SerializeField]
     private float jumpCooldown = 0.2f;
+    [SerializeField]
+    [Tooltip("上昇中の重力スケール（小さいほど一気に上昇する）")]
+    private float jumpGravityScale = 1.0f;
+    [SerializeField]
+    [Tooltip("落下中の重力スケール（大きいほど素早く落ちる）")]
+    private float fallGravityScale = 3.0f;
 
     [Header("Score")]
     [SerializeField]
@@ -43,6 +49,14 @@ public class GameMasterData : ScriptableObject
     /// ジャンプ待ち時間
     /// </summary>
     public float JumpCooldown => jumpCooldown;
+    /// <summary>
+    /// 上昇中の重力スケール
+    /// </summary>
+    public float JumpGravityScale => jumpGravityScale;
+    /// <summary>
+    /// 落下中の重力スケール
+    /// </summary>
+    public float FallGravityScale => fallGravityScale;
 
     /// <summary>
     /// コインで増えるスコア
