@@ -1,3 +1,4 @@
+using AudioName;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -22,6 +23,12 @@ public class ResultUI : MonoBehaviour
 
     private void Awake()
     {
+        // 音楽の再生(今までの音楽をストップ)
+        AudioManager.Instance.StopBGM(BGMName.MAIN_GAME_BGM2_NAME);
+        AudioManager.Instance.StopBGM(BGMName.MAIN_GAME_BGM_NAME);
+
+        AudioManager.Instance.PlayLoopBGM(BGMName.RESULT_BGM_NAME);
+
         // ResultManagerからスコア、キル数、コイン数を取得してUIに反映
         scoreText.text = "50";// ResultManager.score.ToString();
         killText.text = "Kills :                            5";// + ResultManager.killCount.ToString();

@@ -11,9 +11,12 @@ public class EnemyBase : MonoBehaviour
     // 敵のHP
     [SerializeField,Tooltip("敵の初期HP")]
     protected float hp = 1;
+    // 敵のID
+    [SerializeField,Tooltip("ID")]
+    protected int enemyID = 0;
 
     // アニメータの初期化
-    virtual protected void Start()
+    virtual protected void OnEnable()
     {
         animator = GetComponent<Animator>();
     }
@@ -30,7 +33,7 @@ public class EnemyBase : MonoBehaviour
             {
                 // 敵が倒されたときの処理
                 ResultManager.Instance.AddKill(); // キルカウントを増やす
-                Destroy(gameObject); // 敵オブジェクトを破壊
+                gameObject.SetActive(false); // 敵オブジェクトを非アクティブ化
             }
         }
 

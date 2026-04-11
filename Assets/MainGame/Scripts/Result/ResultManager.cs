@@ -18,13 +18,10 @@ public class ResultManager : Singleton<ResultManager>
         score = 0;
         killCount = 0;
         coinCount = 0;
-        // 音楽の再生(今までの音楽をストップ)
-        AudioManager.Instance.StopBGM(BGMName.MAIN_GAME_BGM2_NAME);
-        AudioManager.Instance.StopBGM(BGMName.MAIN_GAME_BGM_NAME);
 
-        AudioManager.Instance.PlayLoopBGM(BGMName.RESULT_BGM_NAME);
-        
-
+        // 音楽を再生
+        AudioManager.Instance.StopBGM(BGMName.TITLE_BGM_NAME);
+        AudioManager.Instance.PlayBGM(BGMName.MAIN_GAME_BGM_NAME);
     }
 
     // Result内容の加算と取得
