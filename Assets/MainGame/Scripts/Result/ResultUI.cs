@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -32,8 +33,11 @@ public class ResultUI : MonoBehaviour
     {
         if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            // 次のステージへ遷移
-            SceneManager.LoadScene("TitleScene");
+            SceneChangeManager.Instance
+                .SetFadeDuration(0.4f, 0.3f)
+                .SetFadeEase(Ease.OutCubic, Ease.InCubic)
+                .SetFadeColor(Color.black)
+                .ChangeScene("TitleScene");
         }
     }
 }
