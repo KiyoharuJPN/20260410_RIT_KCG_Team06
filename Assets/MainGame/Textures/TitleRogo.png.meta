@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: 74454ba31ce89e447a4c0c3a3f8129bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7784630946616742800
+    second: TitleRogo_0
+  - first:
+      213: -1916288902425001034
+    second: TitleRogo_1
+  - first:
+      213: -3624129995465241874
+    second: TitleRogo_2
+  - first:
+      213: -1278215916274380842
+    second: TitleRogo_3
+  - first:
+      213: -552526490373456921
+    second: TitleRogo_4
+  - first:
+      213: 3912697542509799915
+    second: TitleRogo_5
+  - first:
+      213: -5676250484311057809
+    second: TitleRogo_6
+  - first:
+      213: -7978337106570863883
+    second: TitleRogo_7
+  - first:
+      213: 2415029699131737244
+    second: TitleRogo_8
+  - first:
+      213: 4429100921374050955
+    second: TitleRogo_9
+  - first:
+      213: -5856603081521074392
+    second: TitleRogo_10
+  - first:
+      213: -7646713951377230533
+    second: TitleRogo_11
+  - first:
+      213: 6894098918081111474
+    second: TitleRogo_12
+  - first:
+      213: -836124668584337293
+    second: TitleRogo_13
+  - first:
+      213: 343260915994415239
+    second: TitleRogo_14
+  - first:
+      213: 5947256042291032571
+    second: TitleRogo_15
+  - first:
+      213: -5065904077718787723
+    second: TitleRogo_16
+  - first:
+      213: -212865515234828933
+    second: TitleRogo_17
+  - first:
+      213: -8812639750993705257
+    second: TitleRogo_18
+  - first:
+      213: 8763226009003780808
+    second: TitleRogo_19
+  - first:
+      213: 2292905472319967999
+    second: TitleRogo_20
+  - first:
+      213: 6787788698590163039
+    second: TitleRogo_21
+  - first:
+      213: -9184568815383227998
+    second: TitleRogo_22
+  - first:
+      213: 864178869985039314
+    second: TitleRogo_23
+  - first:
+      213: 4768621282699368032
+    second: TitleRogo_24
+  - first:
+      213: 6300989574260585219
+    second: TitleRogo_25
+  - first:
+      213: -557947324586785038
+    second: TitleRogo_26
+  - first:
+      213: 5611410218344357744
+    second: TitleRogo_27
+  - first:
+      213: 7598315746397128744
+    second: TitleRogo_28
+  - first:
+      213: -469872568514819557
+    second: TitleRogo_29
+  - first:
+      213: 1502042501769257637
+    second: TitleRogo_30
+  - first:
+      213: -1114354918740516053
+    second: TitleRogo_31
+  - first:
+      213: -252094239331938161
+    second: TitleRogo_32
+  - first:
+      213: 2798053044174857916
+    second: TitleRogo_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TitleRogo_0
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 17
+        width: 1765
+        height: 1047
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0939a98e990980c60800000000000000
+      internalID: 7784630946616742800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_1
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 1053
+        width: 49
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b34feb6569f765e0800000000000000
+      internalID: -1916288902425001034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_2
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1047
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeac47878f084bdc0800000000000000
+      internalID: -3624129995465241874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_3
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1045
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df073c756dd24ee0800000000000000
+      internalID: -1278215916274380842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_4
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 1043
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebfb4c95180558f0800000000000000
+      internalID: -552526490373456921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_5
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 1042
+        width: 70
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be927de3fa1bc4630800000000000000
+      internalID: 3912697542509799915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_6
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1047
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a10823248e931b0800000000000000
+      internalID: -5676250484311057809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_7
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 1046
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa96803ca0474190800000000000000
+      internalID: -7978337106570863883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_8
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1043
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9404ca47b8e38120800000000000000
+      internalID: 2415029699131737244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_9
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 1051
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a0bd452d3577d30800000000000000
+      internalID: 4429100921374050955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_10
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 1050
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82f6a77e68a29bea0800000000000000
+      internalID: -5856603081521074392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_11
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1045
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b35f22ddc2a61e590800000000000000
+      internalID: -7646713951377230533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_12
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 1034
+        width: 62
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b521a28072ccaf50800000000000000
+      internalID: 6894098918081111474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_13
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 1033
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 370e61d3b0d7564f0800000000000000
+      internalID: -836124668584337293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_14
+      rect:
+        serializedVersion: 2
+        x: 1254
+        y: 1018
+        width: 66
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7805f130cf183c400800000000000000
+      internalID: 343260915994415239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_15
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 1042
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf17d0d4cd5e88250800000000000000
+      internalID: 5947256042291032571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_16
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 1049
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5796e55e41b42b9b0800000000000000
+      internalID: -5065904077718787723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_17
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 1049
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d5f7311ffbb0df0800000000000000
+      internalID: -212865515234828933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_18
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 1039
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d6888c76d633b580800000000000000
+      internalID: -8812639750993705257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_19
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 1035
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ca622920ab3d9970800000000000000
+      internalID: 8763226009003780808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_20
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 1044
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff25e25f06902df10800000000000000
+      internalID: 2292905472319967999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_21
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 1031
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50b0edabd1133e50800000000000000
+      internalID: 6787788698590163039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_22
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 533
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1d3f7035bd98080800000000000000
+      internalID: -9184568815383227998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_23
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 553
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d35bd78a1e2efb00800000000000000
+      internalID: 864178869985039314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_24
+      rect:
+        serializedVersion: 2
+        x: 1864
+        y: 522
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 066d9a79acb8d2240800000000000000
+      internalID: 4768621282699368032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_25
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 529
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 303fd3b32ac917750800000000000000
+      internalID: 6300989574260585219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_26
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 19
+        width: 12
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f600aa4dd5c148f0800000000000000
+      internalID: -557947324586785038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_27
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 30
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f9961fcdbbfdd40800000000000000
+      internalID: 5611410218344357744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_28
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 29
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828024be9e3a27960800000000000000
+      internalID: 7598315746397128744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_29
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 32
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a49ff636daa79f0800000000000000
+      internalID: -469872568514819557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_30
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 27
+        width: 53
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2ee7b72b358d410800000000000000
+      internalID: 1502042501769257637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_31
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 0
+        width: 21
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2323c20b140980f0800000000000000
+      internalID: -1114354918740516053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_32
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 33
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8092beff91608cf0800000000000000
+      internalID: -252094239331938161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TitleRogo_33
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 32
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb62eb04b6ea4d620800000000000000
+      internalID: 2798053044174857916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TitleRogo_0: 7784630946616742800
+      TitleRogo_1: -1916288902425001034
+      TitleRogo_10: -5856603081521074392
+      TitleRogo_11: -7646713951377230533
+      TitleRogo_12: 6894098918081111474
+      TitleRogo_13: -836124668584337293
+      TitleRogo_14: 343260915994415239
+      TitleRogo_15: 5947256042291032571
+      TitleRogo_16: -5065904077718787723
+      TitleRogo_17: -212865515234828933
+      TitleRogo_18: -8812639750993705257
+      TitleRogo_19: 8763226009003780808
+      TitleRogo_2: -3624129995465241874
+      TitleRogo_20: 2292905472319967999
+      TitleRogo_21: 6787788698590163039
+      TitleRogo_22: -9184568815383227998
+      TitleRogo_23: 864178869985039314
+      TitleRogo_24: 4768621282699368032
+      TitleRogo_25: 6300989574260585219
+      TitleRogo_26: -557947324586785038
+      TitleRogo_27: 5611410218344357744
+      TitleRogo_28: 7598315746397128744
+      TitleRogo_29: -469872568514819557
+      TitleRogo_3: -1278215916274380842
+      TitleRogo_30: 1502042501769257637
+      TitleRogo_31: -1114354918740516053
+      TitleRogo_32: -252094239331938161
+      TitleRogo_33: 2798053044174857916
+      TitleRogo_4: -552526490373456921
+      TitleRogo_5: 3912697542509799915
+      TitleRogo_6: -5676250484311057809
+      TitleRogo_7: -7978337106570863883
+      TitleRogo_8: 2415029699131737244
+      TitleRogo_9: 4429100921374050955
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
