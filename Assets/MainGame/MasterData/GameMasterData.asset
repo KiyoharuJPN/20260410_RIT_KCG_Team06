@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: GameMasterData
   m_EditorClassIdentifier: Assembly-CSharp::GameMasterData
   smallJumpPower: 8
-  largeJumpPower: 12
+  largeJumpPower: 24
   jumpCooldown: 0.2
   jumpGravityScale: 1
-  fallGravityScale: 2
+  fallGravityScale: 3.2
   scorePerCoin: 100
   scorePerEnemyDefeat: 300
   timeLimit: 60
