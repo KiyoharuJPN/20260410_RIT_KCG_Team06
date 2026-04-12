@@ -18,7 +18,8 @@ public class StageManager : Singleton<StageManager>
 
     public void ResetStaticEnvironment()
     {
-        
+        Destroy(StaticEnvironment);
+        StaticEnvironment = Instantiate(StaticEnvironmentPrefab);
     }
 
 

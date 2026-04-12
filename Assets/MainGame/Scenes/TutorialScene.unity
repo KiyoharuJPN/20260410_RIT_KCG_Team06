@@ -788,6 +788,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1631345224411383132, guid: c2553400cce530f4c90696013b39d627, type: 3}
   m_PrefabInstance: {fileID: 6542630192250752066}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1377139816 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3942840069352682999, guid: 6a39691b52666a140ab9f757caf01e55, type: 3}
+  m_PrefabInstance: {fileID: 4104380268789017558}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1410770249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1026,11 +1031,15 @@ PrefabInstance:
     - target: {fileID: 1429150332559040553, guid: c2553400cce530f4c90696013b39d627, type: 3}
       propertyPath: StaticEnvironment
       value: 
-      objectReference: {fileID: 3942840069352682999, guid: 6a39691b52666a140ab9f757caf01e55, type: 3}
+      objectReference: {fileID: 1377139816}
     - target: {fileID: 1429150332559040553, guid: c2553400cce530f4c90696013b39d627, type: 3}
       propertyPath: DynamicEnvironment
       value: 
       objectReference: {fileID: 2026247907}
+    - target: {fileID: 1429150332559040553, guid: c2553400cce530f4c90696013b39d627, type: 3}
+      propertyPath: StaticEnvironmentPrefab
+      value: 
+      objectReference: {fileID: 3942840069352682999, guid: 6a39691b52666a140ab9f757caf01e55, type: 3}
     - target: {fileID: 1631345224411383132, guid: c2553400cce530f4c90696013b39d627, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.03098
@@ -1139,6 +1148,10 @@ PrefabInstance:
     - target: {fileID: 2218705124251957230, guid: ff18e204c43300a40b343626ae17e262, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3558244887398673715, guid: ff18e204c43300a40b343626ae17e262, type: 3}
+      propertyPath: checkHeight
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 5525346665583082048, guid: ff18e204c43300a40b343626ae17e262, type: 3}
       propertyPath: m_Name

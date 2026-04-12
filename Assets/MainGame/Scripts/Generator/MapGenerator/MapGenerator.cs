@@ -20,7 +20,7 @@ public class MapGenerator : MonoBehaviour
     // プレイヤーの管理用
     GameObject player;
     Vector2 playerStartPos;
-
+    PlayerLives playerLives;
     // 生成管理用
     int LastGenHeight = 0;
 
@@ -31,6 +31,10 @@ public class MapGenerator : MonoBehaviour
         // プレイヤーに関する初期化
         player = GameObject.FindGameObjectWithTag("Player");
         playerStartPos = player.transform.position;
+
+        playerLives = player.GetComponent<PlayerLives>();
+        playerLives.OnGameOver.AddListener(PlayerDead);
+
         // 生成関係
         LastGenHeight = startHeight;
 
@@ -74,6 +78,8 @@ public class MapGenerator : MonoBehaviour
     public void PlayerDead()
     {
         StageManager.Instance.ResetStaticEnvironment();
+        playerLives.AddLives(3);
+        player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         player.transform.position = playerStartPos;
         ResetMap();
     }
