@@ -1,36 +1,39 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 /// <summary>
 /// プレイヤーの空中パンチ攻撃を管理するクラス。
-/// 最寄りの敵の方向（左・右・上）を判定し、対応するヒットボックスを一時的に有効化する。
 /// </summary>
 public class PlayerPunchExecutor : MonoBehaviour
 {
-    [SerializeField, Tooltip("左方向のパンチ判定オブジェクト（Playerタグ・IsTriggerコライダー付き）")]
+    [SerializeField]
+    [Tooltip("左方向のパンチ判定オブジェクト")]
     private GameObject m_leftHitbox;
 
-    [SerializeField, Tooltip("右方向のパンチ判定オブジェクト（Playerタグ・IsTriggerコライダー付き）")]
+    [SerializeField]
+    [Tooltip("右方向のパンチ判定オブジェクト")]
     private GameObject m_rightHitbox;
 
-    [SerializeField, Tooltip("上方向のパンチ判定オブジェクト（Playerタグ・IsTriggerコライダー付き）")]
+    [SerializeField]
+    [Tooltip("上方向のパンチ判定オブジェクト")]
     private GameObject m_upHitbox;
 
-    [SerializeField, Tooltip("パンチ判定の持続時間（秒）")]
+    [SerializeField]
+    [Tooltip("パンチ判定の持続時間")]
     private float m_hitboxDuration = 0.1f;
 
     /// <summary>
-    /// パンチの方向を示す列挙型（PlayerSpriteManagerからも参照する）
+    /// パンチの方向を示す列挙型
     /// </summary>
     public enum PunchDirection { Left, Right, Up }
 
     /// <summary>
-    /// 現在パンチ中かどうかを示すプロパティ（PlayerSpriteManagerが参照する）
+    /// 現在パンチ中かどうかを示すプロパティ
     /// </summary>
     public bool IsPunching { get; private set; }
 
     /// <summary>
-    /// 直前のパンチ方向（PlayerSpriteManagerが参照する）
+    /// 直前のパンチ方向
     /// </summary>
     public PunchDirection LastPunchDirection { get; private set; }
 

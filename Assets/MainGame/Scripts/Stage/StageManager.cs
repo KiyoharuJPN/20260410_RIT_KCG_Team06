@@ -10,17 +10,6 @@ public class StageManager : Singleton<StageManager>
     GameMasterData masterData;
     public GameMasterData MasterData => masterData;
 
-
-
-
-
-
-
-
-
-
-
-
     /// <summary>
     /// ボーナスステージかどうかを示すプロパティ
     /// </summary>

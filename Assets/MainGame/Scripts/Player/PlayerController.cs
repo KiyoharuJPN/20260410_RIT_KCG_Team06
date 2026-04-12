@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// プレイヤーの操作を管理するクラス
@@ -68,16 +68,6 @@ public class PlayerController : MonoBehaviour
         playerStateMachine = GetComponent<PlayerStateMachine>();
         groundChecker      = GetComponent<GroundChecker>();
         rb                 = GetComponent<Rigidbody2D>();
-
-        // ===== デバッグ：各コンポーネントの取得状態を確認 =====
-        Debug.Log($"inputReceiver:       {(inputReceiver       != null ? "OK" : "NULL")}");
-        Debug.Log($"playerJumpHandler:   {(playerJumpHandler   != null ? "OK" : "NULL")}");
-        Debug.Log($"playerJumpExecutor:  {(playerJumpExecutor  != null ? "OK" : "NULL")}");
-        Debug.Log($"playerPunchExecutor: {(playerPunchExecutor != null ? "OK" : "NULL")}");
-        Debug.Log($"playerStateMachine:  {(playerStateMachine  != null ? "OK" : "NULL")}");
-        Debug.Log($"groundChecker:       {(groundChecker       != null ? "OK" : "NULL")}");
-        Debug.Log($"rb:                  {(rb                  != null ? "OK" : "NULL")}");
-        Debug.Log($"stageManager:        {(stageManager        != null ? "OK" : "NULL")}");
     }
 
     void Update()
