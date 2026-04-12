@@ -30,9 +30,9 @@ public class ResultUI : MonoBehaviour
         AudioManager.Instance.PlayLoopBGM(BGMName.RESULT_BGM_NAME);
 
         // ResultManagerからスコア、キル数、コイン数を取得してUIに反映
-        scoreText.text = "50";// ResultManager.score.ToString();
-        killText.text = "5";// ResultManager.killCount.ToString();
-        coinText.text = "5";// ResultManager.coinCount.ToString();
+        scoreText.text = ResultManager.score.ToString() == null ? "0" : ResultManager.score.ToString();
+        killText.text = ResultManager.killCount.ToString() == null ? "0" : ResultManager.killCount.ToString();
+        coinText.text = ResultManager.coinCount.ToString() == null ? "0" : ResultManager.coinCount.ToString();
     }
 
 

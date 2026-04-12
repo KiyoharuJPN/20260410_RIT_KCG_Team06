@@ -9,15 +9,16 @@ public class StageManager : Singleton<StageManager>
     [SerializeField]
     GameMasterData masterData;
     public GameMasterData MasterData => masterData;
-
     [SerializeField]
     GameObject StaticEnvironment;
+    [SerializeField]
+    GameObject StaticEnvironmentPrefab;
     [SerializeField]
     GameObject DynamicEnvironment;
 
     public void ResetStaticEnvironment()
     {
-        StaticEnvironment.SetActive(false);
+        
     }
 
 
