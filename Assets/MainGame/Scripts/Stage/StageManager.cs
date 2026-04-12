@@ -10,6 +10,33 @@ public class StageManager : Singleton<StageManager>
     GameMasterData masterData;
     public GameMasterData MasterData => masterData;
 
+    [SerializeField]
+    GameObject StaticEnvironment;
+    [SerializeField]
+    GameObject DynamicEnvironment;
+
+    public void ResetStaticEnvironment()
+    {
+        StaticEnvironment.SetActive(false);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 消したらエラーを出すので、残しておいた
     /// <summary>
     /// ボーナスステージかどうかを示すプロパティ
     /// </summary>
