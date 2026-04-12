@@ -12,6 +12,8 @@ public class MoveStage : MonoBehaviour
     protected Vector2 movePivot = Vector2.zero;
     // Frameごとの移動量を計算するための変数
     Vector2 movedDisplacement = Vector2.zero;
+    // プレイヤーが移動する際の微調整用の係数
+    float deviation = 1.02f;
 
     protected virtual void Start()
     {
@@ -29,7 +31,7 @@ public class MoveStage : MonoBehaviour
             {
                 if(rb.linearVelocityY == 0) // プレイヤーがジャンプしていない場合のみ移動させる
                 {
-                    rb.MovePosition(rb.position + (movedDisplacement * 1.04f));
+                    rb.MovePosition(rb.position + (movedDisplacement * deviation));
                 }
             }
         }

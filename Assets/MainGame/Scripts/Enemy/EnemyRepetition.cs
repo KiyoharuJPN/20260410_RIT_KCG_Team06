@@ -8,6 +8,7 @@ public class EnemyRepetition : EnemyBase
     public float distance = 2;
     // 移動の基準点
     protected Vector2 movePivot = Vector2.zero;
+    protected Vector2 prevPosition = Vector2.zero;
 
     protected override void Start()
     {

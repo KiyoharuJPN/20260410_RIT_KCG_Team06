@@ -5,6 +5,7 @@ public class EnemyVMove : EnemyRepetition
 {
     private void FixedUpdate()
     {
+        SetMoveDirection();
         CalcEnemyMovement();
     }
 
