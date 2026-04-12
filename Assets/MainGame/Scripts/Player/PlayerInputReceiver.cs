@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
@@ -15,6 +15,11 @@ public class PlayerInputReceiver : MonoBehaviour
     /// このフレームでキーが離されたか
     /// </summary>
     public bool IsReleased { get; private set; }
+
+    /// <summary>
+    /// 現在キーが押し続けられているか（フレームをまたいで維持される）
+    /// </summary>
+    public bool IsHolding { get; private set; }
 
     /// <summary>
     /// PlayerInput コンポーネントの参照
@@ -59,6 +64,7 @@ public class PlayerInputReceiver : MonoBehaviour
     {
         Debug.Log("Punch: Pressed");
         IsPressed = true;
+        IsHolding = true; // 押し始めを記録
     }
 
     /// <summary>
@@ -68,6 +74,7 @@ public class PlayerInputReceiver : MonoBehaviour
     {
         Debug.Log("Punch: Released");
         IsReleased = true;
+        IsHolding = false; // 押し終わりを記録
     }
 
     /// <summary>
