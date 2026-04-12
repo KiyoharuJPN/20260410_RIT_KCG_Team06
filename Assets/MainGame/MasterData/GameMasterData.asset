@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f336fd9be465942975fe85f36fbc81, type: 3}
   m_Name: GameMasterData
   m_EditorClassIdentifier: Assembly-CSharp::GameMasterData
-  smallJumpPower: 8
-  largeJumpPower: 24
+  smallJumpPower: 30
+  largeJumpPower: 40
   jumpCooldown: 0.2
-  jumpGravityScale: 1
-  fallGravityScale: 3.2
+  jumpGravityScale: 10
+  fallGravityScale: 20
   scorePerCoin: 100
   scorePerEnemyDefeat: 300
   timeLimit: 60

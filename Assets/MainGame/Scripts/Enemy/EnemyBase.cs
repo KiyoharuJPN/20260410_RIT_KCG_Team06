@@ -27,30 +27,17 @@ public class EnemyBase : MonoBehaviour
     // HP処理
     virtual protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("PlayerAttack"))
         {
-            // プレイヤーにダメージを与える処理
             // ダメージ処理
             hp -= 1f; // 仮のダメージ値
             if (hp <= 0)
             {
                 // 敵が倒されたときの処理
                 ResultManager.Instance.AddKill(); // キルカウントを増やす
-                Destroy(gameObject); // 敵オブジェクトを非アクティブ化
+                Destroy(gameObject); // 敵オブジェクトを破壊
             }
         }
-
-        //if (collision.gameObject.CompareTag("PlayerAttack"))
-        //{
-        //    // ダメージ処理
-        //    hp -= 1f; // 仮のダメージ値
-        //    if (hp <= 0)
-        //    {
-        //        // 敵が倒されたときの処理
-        //        ResultManager.Instance.AddKill(); // キルカウントを増やす
-        //        Destroy(gameObject); // 敵オブジェクトを破壊
-        //    }
-        //}
     }
 
     // モンスターが向かう方向の設定
