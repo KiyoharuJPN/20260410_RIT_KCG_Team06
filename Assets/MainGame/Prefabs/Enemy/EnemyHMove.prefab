@@ -175,5 +175,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHMove
   hp: 2
+  enemyID: 3
   moveSpeed: 2
   distance: 2
