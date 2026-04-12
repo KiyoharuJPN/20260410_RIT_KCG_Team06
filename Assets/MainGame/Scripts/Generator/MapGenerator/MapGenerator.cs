@@ -73,7 +73,7 @@ public class MapGenerator : MonoBehaviour
     // プレイヤーが死んだときのこれを読んだら最初の一に戻してくれるさらにマップもリセットしてくれる
     public void PlayerDead()
     {
-        StageManager.Instance.ResetStaticEnvironment
+        //StageManager.Instance.ResetStaticEnvironment
         player.transform.position = playerStartPos;
         ResetMap();
     }
