@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -7,25 +7,32 @@ using UnityEngine;
 /// </summary>
 public class PlayerPunchExecutor : MonoBehaviour
 {
-    [SerializeField]
-    [Tooltip("左方向のパンチ判定オブジェクト")]
+    [SerializeField, Tooltip("左方向のパンチ判定オブジェクト（Playerタグ・IsTriggerコライダー付き）")]
     private GameObject m_leftHitbox;
 
-    [SerializeField]
-    [Tooltip("右方向のパンチ判定オブジェクト")]
+    [SerializeField, Tooltip("右方向のパンチ判定オブジェクト（Playerタグ・IsTriggerコライダー付き）")]
     private GameObject m_rightHitbox;
 
-    [SerializeField]
-    [Tooltip("上方向のパンチ判定オブジェクト")]
+    [SerializeField, Tooltip("上方向のパンチ判定オブジェクト（Playerタグ・IsTriggerコライダー付き）")]
     private GameObject m_upHitbox;
 
     [SerializeField, Tooltip("パンチ判定の持続時間（秒）")]
     private float m_hitboxDuration = 0.1f;
 
     /// <summary>
-    /// パンチの方向を示す列挙型
+    /// パンチの方向を示す列挙型（PlayerSpriteManagerからも参照する）
     /// </summary>
-    private enum PunchDirection { Left, Right, Up }
+    public enum PunchDirection { Left, Right, Up }
+
+    /// <summary>
+    /// 現在パンチ中かどうかを示すプロパティ（PlayerSpriteManagerが参照する）
+    /// </summary>
+    public bool IsPunching { get; private set; }
+
+    /// <summary>
+    /// 直前のパンチ方向（PlayerSpriteManagerが参照する）
+    /// </summary>
+    public PunchDirection LastPunchDirection { get; private set; }
 
     private void Awake()
     {
@@ -41,6 +48,9 @@ public class PlayerPunchExecutor : MonoBehaviour
     /// </summary>
     public void ExecutePunch()
     {
+        // 既にパンチ中は重複実行しない
+        if (IsPunching) return;
+
         // シーン内の全EnemyBaseを検索
         EnemyBase[] enemies = FindObjectsByType<EnemyBase>(FindObjectsSortMode.None);
         if (enemies.Length == 0)
@@ -58,8 +68,8 @@ public class PlayerPunchExecutor : MonoBehaviour
             // 距離が現在の最小値より小さい場合に更新
             if (dist < minDist)
             {
-                minDist = dist;
-                nearest = enemy;
+                minDist   = dist;
+                nearest   = enemy;
             }
         }
 
@@ -89,10 +99,15 @@ public class PlayerPunchExecutor : MonoBehaviour
     }
 
     /// <summary>
-    /// 指定したヒットボックスを一時的に有効化するコルーチン
+    /// 指定したヒットボックスを一時的に有効化するコルーチン。
+    /// IsPunching フラグとLastPunchDirectionをスプライト管理用に更新する。
     /// </summary>
     private IEnumerator ActivateHitbox(PunchDirection direction)
     {
+        // パンチ開始：スプライト管理用のプロパティを更新
+        LastPunchDirection = direction;
+        IsPunching = true;
+
         // 方向に対応したヒットボックスを選択
         GameObject hitbox = direction switch
         {
@@ -105,15 +120,17 @@ public class PlayerPunchExecutor : MonoBehaviour
         if (hitbox == null)
         {
             Debug.LogWarning($"方向 {direction} に対応するヒットボックスが未設定です");
+            IsPunching = false;
             yield break;
         }
 
-        // ヒットボックスを有効化
+        // ヒットボックスを有効化し、指定時間後に無効化
         SetHitboxActive(hitbox, true);
-
-        // 指定時間だけ有効にした後、無効化
         yield return new WaitForSeconds(m_hitboxDuration);
         SetHitboxActive(hitbox, false);
+
+        // パンチ終了
+        IsPunching = false;
     }
 
     /// <summary>

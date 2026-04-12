@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 525981115124025894}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.498, z: 0}
+  m_LocalPosition: {x: 0, y: -0.874, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6001959460443935974}
   m_Layer: 0
   m_Name: PunchHitbox_Right
-  m_TagString: Player
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 7973478917796797295}
   m_Layer: 0
   m_Name: PunchHitbox_Left
-  m_TagString: Player
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 5525346665583082048}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.98, y: -2.03, z: 0}
+  m_LocalPosition: {x: -5.466, y: -1.898, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -283,7 +283,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -9176200843898443681, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -358,13 +358,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.2534246, y: 1.6675963}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.7}
   m_EdgeRadius: 0
 --- !u!114 &1249309286402468326
 MonoBehaviour:
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundChecker
   groundCheck: {fileID: 62297142151549377}
-  checkWidth: 0.8
+  checkWidth: 1
   checkHeight: 0.1
   groundLayer:
     serializedVersion: 2
@@ -477,13 +477,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSpriteManager
   m_spriteRenderer: {fileID: 802426606289556577}
-  m_playerStateMachine: {fileID: 8120623403252947273}
+  m_stateMachine: {fileID: 8120623403252947273}
+  m_punchExecutor: {fileID: 3774708886537334873}
   m_sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -9176200843898443681, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: -1007931243288087428, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: 7249202871605554998, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: -2809546781358030136, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: -4762674911984034653, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: 1034537400385087400, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: 3306495714896027695, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: 759695541241931541, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: 8730441947294350928, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: -3285268674654225301, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: 1815973787429120824, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+  - {fileID: -4868911056922709290, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
 --- !u!114 &618042593035496956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +534,7 @@ GameObject:
   - component: {fileID: 656050479323554624}
   m_Layer: 0
   m_Name: PunchHitbox_Up
-  m_TagString: Player
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
