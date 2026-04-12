@@ -3,8 +3,24 @@
 /// <summary>
 /// ステージの管理を行うクラス
 /// </summary>
-public class StageManager : MonoBehaviour
+public class StageManager : Singleton<StageManager>
 {
+    // ステージ用
+    [SerializeField]
+    GameMasterData masterData;
+    public GameMasterData MasterData => masterData;
+
+
+
+
+
+
+
+
+
+
+
+
     /// <summary>
     /// ボーナスステージかどうかを示すプロパティ
     /// </summary>

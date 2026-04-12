@@ -31,8 +31,8 @@ public class ResultUI : MonoBehaviour
 
         // ResultManagerからスコア、キル数、コイン数を取得してUIに反映
         scoreText.text = "50";// ResultManager.score.ToString();
-        killText.text = "Kills :                            5";// + ResultManager.killCount.ToString();
-        coinText.text = "Coins :                            5";// + ResultManager.coinCount.ToString();
+        killText.text = "5";// ResultManager.killCount.ToString();
+        coinText.text = "5";// ResultManager.coinCount.ToString();
     }
 
 
