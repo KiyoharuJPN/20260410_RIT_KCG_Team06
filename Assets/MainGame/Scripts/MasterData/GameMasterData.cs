@@ -11,10 +11,10 @@ public class GameMasterData : ScriptableObject
     [SerializeField]
     private float jumpCooldown = 0.2f;
     [SerializeField]
-    [Tooltip("上昇中の重力スケール（小さいほど一気に上昇する）")]
+    [Tooltip("上昇中の重力スケール")]
     private float jumpGravityScale = 1.0f;
     [SerializeField]
-    [Tooltip("落下中の重力スケール（大きいほど素早く落ちる）")]
+    [Tooltip("落下中の重力スケール")]
     private float fallGravityScale = 3.0f;
 
     [Header("Score")]

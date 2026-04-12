@@ -1,32 +1,12 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// プレイヤーのスプライトをステートと向きに応じて切り替えるクラス。
 /// </summary>
-/// <remarks>
-/// スプライトリストの登録順（合計12枚）:
-///   Element  0 : Idle_Right
-///   Element  1 : Idle_Left
-///   Element  2 : Charging_Right  ← ChargeReady中も同スプライトを使用
-///   Element  3 : Charging_Left
-///   Element  4 : Jumping_Right
-///   Element  5 : Jumping_Left
-///   Element  6 : Punch_Right
-///   Element  7 : Punch_Left
-///   Element  8 : Punch_Up_Right  ← 上パンチ（向きを維持したまま切り替え）
-///   Element  9 : Punch_Up_Left
-///   Element 10 : Falling_Right
-///   Element 11 : Falling_Left
-///
-/// 向きのルール:
-///   ・初期向きは「右」
-///   ・左右パンチ時にその方向へ向きを更新し、以降のIdle/Charge等もその向きで表示
-///   ・上パンチ時は向きを変更しない（現在向きに応じたUp_Right/Up_Leftを表示）
-/// </remarks>
 public class PlayerSpriteManager : MonoBehaviour
 {
-    // ─── スプライトリストのインデックス定数 ───
+    // スプライトリストのインデックス定数
     private const int IDX_IDLE_RIGHT     = 0;
     private const int IDX_IDLE_LEFT      = 1;
     private const int IDX_CHARGE_RIGHT   = 2;
@@ -35,45 +15,38 @@ public class PlayerSpriteManager : MonoBehaviour
     private const int IDX_JUMP_LEFT      = 5;
     private const int IDX_PUNCH_RIGHT    = 6;
     private const int IDX_PUNCH_LEFT     = 7;
-    private const int IDX_PUNCH_UP_RIGHT = 8; // 上パンチ＋右向き
-    private const int IDX_PUNCH_UP_LEFT  = 9; // 上パンチ＋左向き
+    private const int IDX_PUNCH_UP_RIGHT = 8;
+    private const int IDX_PUNCH_UP_LEFT  = 9;
     private const int IDX_FALL_RIGHT     = 10;
     private const int IDX_FALL_LEFT      = 11;
     private const int SPRITE_TOTAL       = 12;
 
     /// <summary>
-    /// スプライトを表示するSpriteRenderer（省略時は自身のコンポーネントを使用）
+    /// スプライトを表示するSpriteRenderer
     /// </summary>
-    [SerializeField, Tooltip("スプライトを変更するSpriteRenderer（省略時は自身のコンポーネントを使用）")]
+    [SerializeField, Tooltip("スプライトを変更するSpriteRenderer")]
     private SpriteRenderer m_spriteRenderer;
 
     /// <summary>
-    /// プレイヤーの状態機械（省略時は自身のコンポーネントを使用）
+    /// プレイヤーの状態機械
     /// </summary>
-    [SerializeField, Tooltip("PlayerStateMachineコンポーネント（省略時は自身のコンポーネントを使用）")]
+    [SerializeField, Tooltip("PlayerStateMachineコンポーネント")]
     private PlayerStateMachine m_stateMachine;
 
     /// <summary>
-    /// パンチ実行クラスへの参照（省略時は自身のコンポーネントを使用）
+    /// パンチ実行クラスへの参照
     /// </summary>
-    [SerializeField, Tooltip("PlayerPunchExecutorコンポーネント（省略時は自身のコンポーネントを使用）")]
+    [SerializeField, Tooltip("PlayerPunchExecutorコンポーネント")]
     private PlayerPunchExecutor m_punchExecutor;
 
     /// <summary>
-    /// ステートと向きに対応するスプライトリスト（上のremarks参照）
+    /// ステートと向きに対応するスプライトリスト
     /// </summary>
-    [SerializeField, Tooltip(
-        "スプライト一覧（順番厳守）\n" +
-        " 0: Idle_Right\n 1: Idle_Left\n" +
-        " 2: Charging_Right\n 3: Charging_Left\n" +
-        " 4: Jumping_Right\n 5: Jumping_Left\n" +
-        " 6: Punch_Right\n 7: Punch_Left\n" +
-        " 8: Punch_Up_Right\n 9: Punch_Up_Left\n" +
-        "10: Falling_Right\n11: Falling_Left")]
+    [SerializeField]
     private List<Sprite> m_sprites = new List<Sprite>();
 
     /// <summary>
-    /// 現在の向き（true=右、false=左）。パンチで更新される。
+    /// 現在の向き
     /// </summary>
     private bool m_facingRight = true;
 

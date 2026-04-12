@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 3558244887398673715}
   - component: {fileID: 3774708886537334873}
   - component: {fileID: 2402802861634257832}
+  - component: {fileID: 349587102141514725}
   - component: {fileID: 618042593035496956}
   m_Layer: 0
   m_Name: Player
@@ -492,6 +493,26 @@ MonoBehaviour:
   - {fileID: -3285268674654225301, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
   - {fileID: 1815973787429120824, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
   - {fileID: -4868911056922709290, guid: 0522bd13aa0701b4b87b00e512cd1acb, type: 3}
+--- !u!114 &349587102141514725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5525346665583082048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a769650f4dc6894aac0a46119ada609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLives
+  m_initialLives: 3
+  m_invincibleDuration: 1.5
+  OnLivesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnGameOver:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &618042593035496956
 MonoBehaviour:
   m_ObjectHideFlags: 0
