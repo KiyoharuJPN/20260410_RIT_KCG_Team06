@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 /// <summary>
 /// プレイヤーの操作を管理するクラス
@@ -25,6 +25,11 @@ public class PlayerController : MonoBehaviour
     private PlayerJumpExecutor playerJumpExecutor;
 
     /// <summary>
+    /// PlayerPunchExecutorクラスのインスタンスを保持する変数
+    /// </summary>
+    private PlayerPunchExecutor playerPunchExecutor;
+
+    /// <summary>
     /// PlayerStateMachineクラスのインスタンスを保持する変数
     /// </summary>
     private PlayerStateMachine playerStateMachine;
@@ -43,24 +48,36 @@ public class PlayerController : MonoBehaviour
     [Tooltip("マスターデータ")]
     private GameMasterData masterData;
 
+    /// <summary>
+    /// チャージキャンセルまでの時間（秒）
+    /// </summary>
+    private const float CHARGE_CANCEL_DURATION = 2.0f;
+
+    /// <summary>
+    /// ChargeReady状態に入ってからの経過時間
+    /// </summary>
+    private float m_chargeReadyTimer = 0f;
+
     void Awake()
     {
         // 各コンポーネントを取得して変数に格納
-        inputReceiver = GetComponent<PlayerInputReceiver>();
-        playerJumpHandler = GetComponent<PlayerJumpHandler>();
+        inputReceiver      = GetComponent<PlayerInputReceiver>();
+        playerJumpHandler  = GetComponent<PlayerJumpHandler>();
         playerJumpExecutor = GetComponent<PlayerJumpExecutor>();
+        playerPunchExecutor = GetComponent<PlayerPunchExecutor>();
         playerStateMachine = GetComponent<PlayerStateMachine>();
-        groundChecker = GetComponent<GroundChecker>();
-        rb = GetComponent<Rigidbody2D>();
+        groundChecker      = GetComponent<GroundChecker>();
+        rb                 = GetComponent<Rigidbody2D>();
 
         // ===== デバッグ：各コンポーネントの取得状態を確認 =====
-        Debug.Log($"inputReceiver:      {(inputReceiver != null ? "OK" : "NULL")}");
-        Debug.Log($"playerJumpHandler:  {(playerJumpHandler != null ? "OK" : "NULL")}");
-        Debug.Log($"playerJumpExecutor: {(playerJumpExecutor != null ? "OK" : "NULL")}");
-        Debug.Log($"playerStateMachine: {(playerStateMachine != null ? "OK" : "NULL")}");
-        Debug.Log($"groundChecker:      {(groundChecker != null ? "OK" : "NULL")}");
-        Debug.Log($"rb:                 {(rb != null ? "OK" : "NULL")}");
-        Debug.Log($"stageManager:       {(stageManager != null ? "OK" : "NULL")}");
+        Debug.Log($"inputReceiver:       {(inputReceiver       != null ? "OK" : "NULL")}");
+        Debug.Log($"playerJumpHandler:   {(playerJumpHandler   != null ? "OK" : "NULL")}");
+        Debug.Log($"playerJumpExecutor:  {(playerJumpExecutor  != null ? "OK" : "NULL")}");
+        Debug.Log($"playerPunchExecutor: {(playerPunchExecutor != null ? "OK" : "NULL")}");
+        Debug.Log($"playerStateMachine:  {(playerStateMachine  != null ? "OK" : "NULL")}");
+        Debug.Log($"groundChecker:       {(groundChecker       != null ? "OK" : "NULL")}");
+        Debug.Log($"rb:                  {(rb                  != null ? "OK" : "NULL")}");
+        Debug.Log($"stageManager:        {(stageManager        != null ? "OK" : "NULL")}");
     }
 
     void Update()
@@ -75,6 +92,10 @@ public class PlayerController : MonoBehaviour
             case PlayerState.Charging:
                 // Charging状態の処理
                 HandleCharging();
+                break;
+            case PlayerState.ChargeReady:
+                // ChargeReady状態の処理
+                HandleChargeReady();
                 break;
             case PlayerState.Jumping:
                 // Jumping状態の処理
@@ -92,62 +113,68 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void HandleIdle()
     {
-        // ジャンプキーが押されたときのデバッグログ
-        if (inputReceiver.IsPressed)
-        {
-            Debug.Log($"IsGrounded = {groundChecker.IsGrounded}");
-        }
-
-        // ジャンプキーが押されていて、かつ地面にいる場合
+        // 地面にいてキーが押されたらチャージ開始
         if (inputReceiver.IsPressed && groundChecker.IsGrounded)
         {
-            // チャージ開始を記録
             playerJumpHandler.StartHold();
-
-            // キーが押されたと同時に離されれば単押し判定として小ジャンプを即実行
-            if (inputReceiver.IsReleased)
-            {
-                Debug.Log("単押し検出");
-                // ジャンプのチャージを終了し、ジャンプを実行して状態をJumpingに変更
-                playerJumpHandler.EndHold();
-                playerJumpExecutor.Jump(
-                    playerJumpHandler.HoldDuration,
-                    stageManager.IsBonusStage
-                );
-                playerStateMachine.ChangeState(PlayerState.Jumping);
-            }
-            else
-            {
-                Debug.Log("長押し検出");
-                // 長押し中：Charging状態へ遷移してキー離しを待つ
-                playerStateMachine.ChangeState(PlayerState.Charging);
-            }
+            playerStateMachine.ChangeState(PlayerState.Charging);
         }
     }
 
     /// <summary>
     /// チャージ状態の処理を行うメソッド
+    /// キーを押し続けている間チャージが蓄積される
     /// </summary>
     private void HandleCharging()
     {
-        // ジャンプキーを離したらジャンプ
+        // キーを離したらChargeReady状態へ（チャージ量を確定）
         if (inputReceiver.IsReleased)
         {
-            // ジャンプのチャージを終了し、ジャンプを実行して状態をJumpingに変更
-            playerJumpHandler.EndHold();
+            playerJumpHandler.EndHold();  // HoldDuration を確定
+            m_chargeReadyTimer = 0f;      // タイマーをリセット
+            playerStateMachine.ChangeState(PlayerState.ChargeReady);
+        }
+    }
+
+    /// <summary>
+    /// チャージ確定後の待機状態の処理を行うメソッド
+    /// もう一度押すとジャンプ、2秒経過でキャンセル
+    /// </summary>
+    private void HandleChargeReady()
+    {
+        m_chargeReadyTimer += Time.deltaTime;
+
+        // もう一度エンターキーを押したらジャンプ
+        if (inputReceiver.IsPressed)
+        {
             playerJumpExecutor.Jump(
                 playerJumpHandler.HoldDuration,
                 stageManager.IsBonusStage
             );
             playerStateMachine.ChangeState(PlayerState.Jumping);
+            return;
+        }
+
+        // 2秒経過でチャージをキャンセルしてIdle状態へ
+        if (m_chargeReadyTimer >= CHARGE_CANCEL_DURATION)
+        {
+            Debug.Log("チャージキャンセル");
+            playerStateMachine.ChangeState(PlayerState.Idle);
         }
     }
 
     /// <summary>
     /// ジャンプ状態の処理を行うメソッド
+    /// 空中でエンターキーを押すとパンチを実行
     /// </summary>
     private void HandleJump()
     {
+        // 空中でキーが押されたらパンチ実行（クールタイムなし）
+        if (inputReceiver.IsPressed)
+        {
+            playerPunchExecutor.ExecutePunch();
+        }
+
         // 上昇が終わったら落下用の重力スケールに切り替えてFalling状態へ
         if (rb.linearVelocity.y <= 0)
         {
@@ -159,9 +186,16 @@ public class PlayerController : MonoBehaviour
 
     /// <summary>
     /// 落下状態の処理を行うメソッド
+    /// 空中でエンターキーを押すとパンチを実行
     /// </summary>
     private void HandleFall()
     {
+        // 空中でキーが押されたらパンチ実行（クールタイムなし、着地まで可能）
+        if (inputReceiver.IsPressed)
+        {
+            playerPunchExecutor.ExecutePunch();
+        }
+
         // 地面に着いたら重力スケールをデフォルトに戻してIdle状態へ
         if (groundChecker.IsGrounded)
         {
