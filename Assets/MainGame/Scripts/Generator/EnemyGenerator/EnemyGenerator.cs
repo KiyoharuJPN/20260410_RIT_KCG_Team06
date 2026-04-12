@@ -17,7 +17,7 @@ public class EnemyGenerator : MonoBehaviour
     // 生成したエニミーを管理するリスト
     List<GameObject> DynamicEnemies = new List<GameObject>();
     // エニミーを生成する親オブジェクト
-    Transform enemyRoot;
+    Transform enemyRoot = null;
 
     // エニミーを生成する
     public void ResetEnemy(GameObject[] enemyPrefabs)
@@ -25,7 +25,7 @@ public class EnemyGenerator : MonoBehaviour
         // エニミーの出現情報がない場合は何もしない
         if (enemyGenInfos.Length == 0) return;
         // エニミーを生成する場所があるかどうかをチェックする
-        CheckEnemyRoot();
+        if (enemyRoot == null) CheckEnemyRoot();
 
         // 既に生成されているエニミーを削除する
         if (DynamicEnemies.Count > 0) {

@@ -16,7 +16,7 @@ MonoBehaviour:
   largeJumpPower: 12
   jumpCooldown: 0.2
   jumpGravityScale: 1
-  fallGravityScale: 2
+  fallGravityScale: 3.2
   scorePerCoin: 100
   scorePerEnemyDefeat: 300
   timeLimit: 60
