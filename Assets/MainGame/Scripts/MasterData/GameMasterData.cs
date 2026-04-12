@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "GameMasterData", menuName = "Scriptable Objects/GameMasterData")]
 public class GameMasterData : ScriptableObject
@@ -88,4 +88,38 @@ public class GameMasterData : ScriptableObject
     /// フィーバー中に減るフィーバーの量
     /// </summary>
     public float FeverDecreasePerSecondDuringFever => feverDecreasePerSecondDuringFever;
+
+    /// <summary>
+    /// デバッグ用にランタイム値を一括反映する
+    /// </summary>
+    public void ApplyRuntimeValues(
+        float newSmallJumpPower,
+        float newLargeJumpPower,
+        float newJumpCooldown,
+        float newJumpGravityScale,
+        float newFallGravityScale,
+        int newScorePerCoin,
+        int newScorePerEnemyDefeat,
+        float newTimeLimit,
+        float newFeverGaugeAmount,
+        float newFeverPerCoin,
+        float newFeverPerEnemyDefeat,
+        float newFeverDecreasePerSecondDuringFever)
+    {
+        smallJumpPower = Mathf.Max(0.0f, newSmallJumpPower);
+        largeJumpPower = Mathf.Max(0.0f, newLargeJumpPower);
+        jumpCooldown = Mathf.Max(0.0f, newJumpCooldown);
+        jumpGravityScale = Mathf.Max(0.0f, newJumpGravityScale);
+        fallGravityScale = Mathf.Max(0.0f, newFallGravityScale);
+
+        scorePerCoin = Mathf.Max(0, newScorePerCoin);
+        scorePerEnemyDefeat = Mathf.Max(0, newScorePerEnemyDefeat);
+
+        timeLimit = Mathf.Max(0.0f, newTimeLimit);
+
+        feverGaugeAmount = Mathf.Max(0.0001f, newFeverGaugeAmount);
+        feverPerCoin = Mathf.Max(0.0f, newFeverPerCoin);
+        feverPerEnemyDefeat = Mathf.Max(0.0f, newFeverPerEnemyDefeat);
+        feverDecreasePerSecondDuringFever = Mathf.Max(0.0f, newFeverDecreasePerSecondDuringFever);
+    }
 }
