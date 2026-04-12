@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class FeverGaugeUI : MonoBehaviour
 {
@@ -8,10 +9,15 @@ public class FeverGaugeUI : MonoBehaviour
     [SerializeField]
     private GameMasterData gameMasterData;
     /// <summary>
-    /// シェーダー側の進捗プロパティ名
+    /// 分割ゲージ用スプライト配列
     /// </summary>
     [SerializeField]
-    private string shaderPropertyName = "_FeverProgress";
+    private Sprite[] gaugeSprites;
+    /// <summary>
+    /// 表示先のImage
+    /// </summary>
+    [SerializeField]
+    private Image targetImage;
 
     /// <summary>
     /// 正規化に使う最大ゲージ値
@@ -21,28 +27,31 @@ public class FeverGaugeUI : MonoBehaviour
     /// フィーバーゲージ管理
     /// </summary>
     private FeverGaugeManager feverGaugeManager;
-    /// <summary>
-    /// シェーダーに値を送る対象マテリアル
-    /// </summary>
-    private Material targetMaterial;
 
     private void Awake()
     {
         feverGaugeManager = FeverGaugeManager.Instance;
-        feverGaugeMax = gameMasterData.FeverGaugeAmount;
-        targetMaterial = GetComponent<Renderer>()?.material;
+        feverGaugeMax = gameMasterData != null ? gameMasterData.FeverGaugeAmount : 1.0f;
 
-        SetParameter();
+        if (targetImage == null)
+        {
+            targetImage = GetComponent<Image>();
+        }
+
+        SetGaugeSprite();
     }
 
     private void Update()
     {
-        SetParameter();
+        SetGaugeSprite();
     }
 
-    private void SetParameter()
+    /// <summary>
+    /// フィーバーゲージ値から段階スプライトを設定する
+    /// </summary>
+    private void SetGaugeSprite()
     {
-        if (targetMaterial == null)
+        if (targetImage == null || gaugeSprites == null || gaugeSprites.Length == 0 || feverGaugeManager == null)
         {
             return;
         }
@@ -50,6 +59,16 @@ public class FeverGaugeUI : MonoBehaviour
         var maxValue = Mathf.Max(0.0001f, feverGaugeMax);
         var normalized = Mathf.Clamp01(feverGaugeManager.FeverGauge / maxValue);
 
-        targetMaterial.SetFloat(shaderPropertyName, normalized);
+        var segmentCount = gaugeSprites.Length;
+        var filledSegment = Mathf.CeilToInt(normalized * segmentCount);
+
+        if (filledSegment <= 0)
+        {
+            targetImage.sprite = gaugeSprites[0];
+            return;
+        }
+
+        var index = Mathf.Clamp(filledSegment - 1, 0, segmentCount - 1);
+        targetImage.sprite = gaugeSprites[index];
     }
 }

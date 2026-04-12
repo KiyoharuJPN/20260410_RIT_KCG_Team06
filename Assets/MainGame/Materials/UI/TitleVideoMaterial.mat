@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FeverGaugeMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: a25dd2cf690290f488dac1a91e27268e, type: 3}
+  m_Name: TitleVideoMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: 625edcf4720de754299a14a113cf2a12, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -54,8 +54,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Edge: 0.9
     - _EnableExternalAlpha: 0
-    - _FeverProgress: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ZWrite: 0
@@ -64,7 +64,7 @@ Material:
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &2176809550170978854
+--- !u!114 &5070563086869523990
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
