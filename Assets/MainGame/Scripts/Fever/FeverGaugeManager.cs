@@ -17,6 +17,7 @@ public partial class FeverGaugeManager : Singleton<FeverGaugeManager>
         get => feverGauge;
         set
         {
+            if (IsFever) return;
             feverGauge = Mathf.Max(0.0f, value);
 
             if (!IsFever && CanStartFever())

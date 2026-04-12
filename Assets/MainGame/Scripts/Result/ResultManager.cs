@@ -30,12 +30,14 @@ public class ResultManager : Singleton<ResultManager>
     {
         coinCount++;
         CalcScore();
+        FeverGaugeManager.Instance.FeverGauge += masterData.FeverPerCoin;
         Debug.Log($"Coin added! Current coin count: {coinCount}");
     }
     public void AddCoin(int amount)
     {
         coinCount += amount;
         CalcScore();
+        FeverGaugeManager.Instance.FeverGauge += masterData.FeverPerCoin;
         Debug.Log($"Coins added {amount} ! Current coin count: {coinCount}");
     }
 
@@ -44,12 +46,14 @@ public class ResultManager : Singleton<ResultManager>
     {
         killCount++;
         CalcScore();
+        FeverGaugeManager.Instance.FeverGauge += masterData.FeverPerEnemyDefeat;
         Debug.Log($"Kill added! Current kill count: {killCount}");
     }
     public void AddKill(int amount)
     {
         killCount += amount;
         CalcScore();
+        FeverGaugeManager.Instance.FeverGauge += masterData.FeverPerEnemyDefeat;
         Debug.Log($"Kills added {amount} ! Current kill count: {killCount}");
     }
 

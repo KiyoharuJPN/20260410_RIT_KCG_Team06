@@ -1097,14 +1097,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 349587102141514725, guid: ff18e204c43300a40b343626ae17e262, type: 3}
-      propertyPath: OnLivesChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 349587102141514725, guid: ff18e204c43300a40b343626ae17e262, type: 3}
-      propertyPath: OnLivesChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1249309286402468326, guid: ff18e204c43300a40b343626ae17e262, type: 3}
       propertyPath: stageManager
       value: 
@@ -1149,13 +1141,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3558244887398673715, guid: ff18e204c43300a40b343626ae17e262, type: 3}
-      propertyPath: checkHeight
-      value: 0.03
-      objectReference: {fileID: 0}
     - target: {fileID: 5525346665583082048, guid: ff18e204c43300a40b343626ae17e262, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7841963680912866642, guid: ff18e204c43300a40b343626ae17e262, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

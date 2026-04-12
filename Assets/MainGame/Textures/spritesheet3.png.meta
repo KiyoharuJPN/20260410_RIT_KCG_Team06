@@ -276,11 +276,89 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: VisionOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet3_0
+      name: spritesheet3_4
       rect:
         serializedVersion: 2
         x: 810
@@ -288,7 +366,7 @@ TextureImporter:
         width: 246
         height: 211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -302,15 +380,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet3_1
+      name: spritesheet3_5
       rect:
         serializedVersion: 2
         x: 1073
-        y: 12
+        y: 15
         width: 256
         height: 238
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -324,7 +402,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet3_2
+      name: spritesheet3_6
       rect:
         serializedVersion: 2
         x: 1333
@@ -332,7 +410,7 @@ TextureImporter:
         width: 263
         height: 259
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -346,7 +424,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet3_3
+      name: spritesheet3_7
       rect:
         serializedVersion: 2
         x: 1599
@@ -354,7 +432,7 @@ TextureImporter:
         width: 265
         height: 267
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -368,7 +446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet3_4
+      name: spritesheet3_8
       rect:
         serializedVersion: 2
         x: 1866
@@ -376,7 +454,7 @@ TextureImporter:
         width: 270
         height: 267
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -390,7 +468,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet3_14
+      name: spritesheet3_1
       rect:
         serializedVersion: 2
         x: 87
@@ -412,7 +490,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet3_15
+      name: spritesheet3_2
       rect:
         serializedVersion: 2
         x: 308
@@ -434,7 +512,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet3_16
+      name: spritesheet3_3
       rect:
         serializedVersion: 2
         x: 579
@@ -491,19 +569,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spritesheet3_0: 6455500916743056780
-      spritesheet3_1: 8488701913532055882
+      spritesheet3_1: -7972186234332509816
       spritesheet3_10: 8790072837593829347
       spritesheet3_11: -2415323050365013866
       spritesheet3_12: -6236171098348001063
       spritesheet3_13: 3799819789129918304
-      spritesheet3_14: -7972186234332509816
-      spritesheet3_15: 3610713774759638108
-      spritesheet3_16: -7243668298166589327
       spritesheet3_17: 5606007343105711585
       spritesheet3_18: -8523119324668294139
       spritesheet3_19: -6695020316717589597
-      spritesheet3_2: 7909898312275451184
+      spritesheet3_2: 3610713774759638108
       spritesheet3_20: -1085718365981091924
       spritesheet3_21: 7357701277609132296
       spritesheet3_22: -5271408052772105403
@@ -514,7 +588,7 @@ TextureImporter:
       spritesheet3_27: 6835165543187932392
       spritesheet3_28: 4156685661610037840
       spritesheet3_29: 1430368522178072529
-      spritesheet3_3: 9107565266777518125
+      spritesheet3_3: -7243668298166589327
       spritesheet3_30: -3712437256833878641
       spritesheet3_31: 4820083187407506966
       spritesheet3_32: -6246658774016617947
@@ -525,7 +599,7 @@ TextureImporter:
       spritesheet3_37: 4557732691703644111
       spritesheet3_38: 5477657587434758106
       spritesheet3_39: 4499048036013050495
-      spritesheet3_4: 6328422107854803345
+      spritesheet3_4: 6455500916743056780
       spritesheet3_40: 2720337144381031454
       spritesheet3_41: -5530893331623744641
       spritesheet3_42: -2950619099165035747
@@ -536,7 +610,7 @@ TextureImporter:
       spritesheet3_47: -2674584697528875969
       spritesheet3_48: -504270453961743
       spritesheet3_49: -2910977508179452675
-      spritesheet3_5: -6087471460628598723
+      spritesheet3_5: 8488701913532055882
       spritesheet3_50: 6514736302473902488
       spritesheet3_51: -7091646506392806847
       spritesheet3_52: -7251319966448585365
@@ -547,10 +621,10 @@ TextureImporter:
       spritesheet3_57: 7310089253476228316
       spritesheet3_58: -4200004635788647024
       spritesheet3_59: -5026141297694861661
-      spritesheet3_6: 4067461312829295248
+      spritesheet3_6: 7909898312275451184
       spritesheet3_60: -989395368404762458
-      spritesheet3_7: -4673461637237823495
-      spritesheet3_8: -4230372623674684730
+      spritesheet3_7: 9107565266777518125
+      spritesheet3_8: 6328422107854803345
       spritesheet3_9: -3795070203446340970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

@@ -174,6 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1449c2e8cb81e5d479a2d2e77f193f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHMove
+  hitEffect: {fileID: 1752019431626907700, guid: 8de6329fee9b5734585ae3094b414af0, type: 3}
   hp: 2
   enemyID: 3
   moveSpeed: 2
