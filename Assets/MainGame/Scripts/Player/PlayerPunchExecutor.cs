@@ -1,26 +1,22 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 /// <summary>
 /// プレイヤーの空中パンチ攻撃を管理するクラス。
 /// 最寄りの敵の方向（左・右・上）を判定し、対応するヒットボックスを一時的に有効化する。
 /// </summary>
-/// <remarks>
-/// セットアップ方法:
-/// 1. プレイヤーの子オブジェクトとして「PunchHitbox_Left」「PunchHitbox_Right」「PunchHitbox_Up」を作成する。
-/// 2. 各子オブジェクトに BoxCollider2D（IsTrigger=true）をアタッチし、Tag を「Player」に設定する。
-/// 3. 各子オブジェクトを本スクリプトの対応フィールドにアタッチする。
-/// 4. 各子オブジェクトはデフォルトで非アクティブにしておく。
-/// </remarks>
 public class PlayerPunchExecutor : MonoBehaviour
 {
-    [SerializeField, Tooltip("左方向のパンチ判定オブジェクト（Playerタグ・IsTriggerコライダー付き）")]
+    [SerializeField]
+    [Tooltip("左方向のパンチ判定オブジェクト")]
     private GameObject m_leftHitbox;
 
-    [SerializeField, Tooltip("右方向のパンチ判定オブジェクト（Playerタグ・IsTriggerコライダー付き）")]
+    [SerializeField]
+    [Tooltip("右方向のパンチ判定オブジェクト")]
     private GameObject m_rightHitbox;
 
-    [SerializeField, Tooltip("上方向のパンチ判定オブジェクト（Playerタグ・IsTriggerコライダー付き）")]
+    [SerializeField]
+    [Tooltip("上方向のパンチ判定オブジェクト")]
     private GameObject m_upHitbox;
 
     [SerializeField, Tooltip("パンチ判定の持続時間（秒）")]
@@ -80,7 +76,6 @@ public class PlayerPunchExecutor : MonoBehaviour
     /// <summary>
     /// プレイヤーから見た敵の相対位置をもとにパンチ方向（左・右・上）を決定する。
     /// </summary>
-    /// <param name="diff">敵との差分ベクトル</param>
     private PunchDirection DetermineDirection(Vector2 diff)
     {
         // Y成分がX成分の絶対値より大きければ「上」
@@ -96,7 +91,6 @@ public class PlayerPunchExecutor : MonoBehaviour
     /// <summary>
     /// 指定したヒットボックスを一時的に有効化するコルーチン
     /// </summary>
-    /// <param name="direction">有効化するパンチ方向</param>
     private IEnumerator ActivateHitbox(PunchDirection direction)
     {
         // 方向に対応したヒットボックスを選択
@@ -125,8 +119,6 @@ public class PlayerPunchExecutor : MonoBehaviour
     /// <summary>
     /// ヒットボックスオブジェクトのアクティブ状態を安全に切り替えるヘルパー
     /// </summary>
-    /// <param name="hitbox">対象のGameObject</param>
-    /// <param name="active">アクティブにするかどうか</param>
     private void SetHitboxActive(GameObject hitbox, bool active)
     {
         if (hitbox != null)

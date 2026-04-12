@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 8120623403252947273}
   - component: {fileID: 3558244887398673715}
   - component: {fileID: 3774708886537334873}
+  - component: {fileID: 2402802861634257832}
   - component: {fileID: 618042593035496956}
   m_Layer: 0
   m_Name: Player
@@ -318,7 +319,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4704917662912002299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -442,7 +443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundChecker
   groundCheck: {fileID: 62297142151549377}
-  groundCheckRadius: 0.2
+  checkWidth: 0.8
+  checkHeight: 0.1
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -462,6 +464,26 @@ MonoBehaviour:
   m_rightHitbox: {fileID: 2842171539445288569}
   m_upHitbox: {fileID: 7979726056933036757}
   m_hitboxDuration: 0.1
+--- !u!114 &2402802861634257832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5525346665583082048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad86834631f923488b3b72b119214af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpriteManager
+  m_spriteRenderer: {fileID: 802426606289556577}
+  m_playerStateMachine: {fileID: 8120623403252947273}
+  m_sprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &618042593035496956
 MonoBehaviour:
   m_ObjectHideFlags: 0
