@@ -30,7 +30,7 @@ public class MoveStage : MonoBehaviour
             if (collision.gameObject.TryGetComponent(out Rigidbody2D rb))
             {
                 // プレイヤーがジャンプしていない且つプレイヤーがプラットフォームに乗っている場合のみ移動させる
-                if (rb.linearVelocityY == 0 && gameObject.transform.position.y < collision.gameObject.transform.position.y)
+                if (rb.linearVelocityY == 0 && gameObject.transform.position.y+1.0f < collision.gameObject.transform.position.y)
                 {
                     rb.MovePosition(rb.position + (movedDisplacement * deviation));
                 }
