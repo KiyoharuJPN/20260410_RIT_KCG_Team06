@@ -287,10 +287,12 @@ public class PlayerController : MonoBehaviour
     /// フィーバー状態を終了するメソッド
     public void EndFever()
     {
-        lives.SetInvincible( false );
+        if(lives != null) 
+            lives.SetInvincible( false );
         AudioManager.Instance.StopBGM(BGMName.MAIN_GAME_BGM2_NAME);
         AudioManager.Instance.PlayLoopBGM(BGMName.MAIN_GAME_BGM_NAME);
-        feverEffect.SetActive( false );
+        if(feverEffect != null)
+            feverEffect.SetActive( false );
         playerStateMachine.ChangeState(PlayerState.Jumping);
         rb.gravityScale = masterData.JumpGravityScale;
     }
