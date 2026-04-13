@@ -31,6 +31,10 @@ public partial class FeverGaugeManager : Singleton<FeverGaugeManager>
     /// </summary>
     public bool IsFever { get; private set; } = false;
 
+    // 何回も通知を送るので、プレイヤーコントローラーの参照を保持しておく
+    PlayerController playerController;
+    private void Awake()=> playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
     private void Update()
     {
         if (!IsFever || gameMasterData == null)
@@ -54,11 +58,14 @@ public partial class FeverGaugeManager : Singleton<FeverGaugeManager>
     private void StartFever()
     {
         IsFever = true;
+        playerController.StartFever();
     }
 
     private void EndFever()
     {
         IsFever = false;
+        feverGauge = 0.0f; // Player死亡によるリセットがあるのでこれで戻す
+        playerController.EndFever();
     }
 
     private void OnDisable()

@@ -24,6 +24,7 @@ public class PlayerLives : MonoBehaviour
     /// 現在無敵状態かどうか
     /// </summary>
     public bool IsInvincible { get; private set; }
+    public void SetInvincible(bool value) => IsInvincible = value;
 
     /// <summary>
     /// 残機が変化したときに発火するイベント（UI更新などに使用）
@@ -35,27 +36,34 @@ public class PlayerLives : MonoBehaviour
     /// </summary>
     public UnityEvent OnGameOver;
 
+    SpriteRenderer sr;
+
+
     private void Start()
     {
         // 残機を初期値で設定し、初回UI更新を通知
         CurrentLives = m_initialLives;
         OnLivesChanged?.Invoke(CurrentLives);
+
+        // SpriteRendererを取得（点滅エフェクト用）
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    /// <summary>
-    /// 敵のトリガーに接触したときの処理
-    /// </summary>
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // 無敵中はダメージを受けない
-        if (IsInvincible) return;
+    // 一旦敵の方で実装することにしたので、こちらはコメントアウト
+    ///// <summary>
+    ///// 敵のトリガーに接触したときの処理
+    ///// </summary>
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    // 無敵中はダメージを受けない
+    //    if (IsInvincible) return;
 
-        // 接触したオブジェクトが敵かどうかをコンポーネントで判定
-        if (collision.GetComponent<EnemyBase>() != null)
-        {
-            TakeDamage(1);
-        }
-    }
+    //    // 接触したオブジェクトが敵かどうかをコンポーネントで判定
+    //    if (collision.GetComponent<EnemyBase>() != null)
+    //    {
+    //        TakeDamage(1);
+    //    }
+    //}
 
     /// <summary>
     /// プレイヤーがダメージを受けるメソッド。
@@ -63,6 +71,7 @@ public class PlayerLives : MonoBehaviour
     /// </summary>
     public void TakeDamage(int amount)
     {
+        IsInvincible = true;
         // 残機を減算（0未満にはしない）
         CurrentLives = Mathf.Max(0, CurrentLives - amount);
         OnLivesChanged?.Invoke(CurrentLives);
@@ -74,6 +83,7 @@ public class PlayerLives : MonoBehaviour
         {
             Debug.Log("残機0：ゲームオーバーを通知します");
             OnGameOver?.Invoke();
+            IsInvincible = false;
             return;
         }
 
@@ -96,10 +106,16 @@ public class PlayerLives : MonoBehaviour
     /// </summary>
     private IEnumerator InvincibilityCoroutine()
     {
-        IsInvincible = true;
         Debug.Log($"無敵開始（{m_invincibleDuration}秒）");
+        
+        for(int i = 0; i< m_invincibleDuration; i++) {
+            // 無敵中は点滅させるなどのエフェクトを入れると良いかも
+            float col = i % 2 == 0 ? 0.5f : 1;
+            sr.color = new Color(1, col, col, 1f);
 
-        yield return new WaitForSeconds(m_invincibleDuration);
+            yield return new WaitForSeconds(.1f);
+        }
+        sr.color = Color.white; // 色を元に戻す
 
         IsInvincible = false;
         Debug.Log("無敵終了");

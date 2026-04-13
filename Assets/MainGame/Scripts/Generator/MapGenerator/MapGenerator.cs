@@ -77,6 +77,7 @@ public class MapGenerator : MonoBehaviour
     // プレイヤーが死んだときのこれを読んだら最初の一に戻してくれるさらにマップもリセットしてくれる
     public void PlayerDead()
     {
+        if (FeverGaugeManager.Instance.IsFever) FeverGaugeManager.Instance.FeverGauge = 0;
         StageManager.Instance.ResetStaticEnvironment();
         playerLives.AddLives(3);
         player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;

@@ -36,6 +36,14 @@ public class GameMasterData : ScriptableObject
     private float feverPerEnemyDefeat = 10.0f;
     [SerializeField]
     private float feverDecreasePerSecondDuringFever = 15.0f;
+    [SerializeField]
+    [Tooltip("フィーバー中の飛行速度")]
+    private float feverFlySpeed = 10.0f;
+    [SerializeField]
+    [Tooltip("フィーバー中敵へ追跡するスピード")]
+    private float feverChaseSpeed = 5.0f;
+    [SerializeField]
+    private float feverChaseOffset = -1.0f;
 
     /// <summary>
     /// 小ジャンプ力
@@ -88,6 +96,18 @@ public class GameMasterData : ScriptableObject
     /// フィーバー中に減るフィーバーの量
     /// </summary>
     public float FeverDecreasePerSecondDuringFever => feverDecreasePerSecondDuringFever;
+    /// <summary>
+    /// フィーバー中の飛行速度
+    /// </summary>
+    public float FeverFlySpeed => feverFlySpeed;
+    /// </summary
+    /// フィーバー中敵へ追跡するスピード
+    /// </summary>
+    public float FeverChaseSpeed => feverChaseSpeed;
+    /// </summary>
+    /// フィーバー中敵へ追跡する際のオフセット
+    /// </summary>
+    public float FeverChaseOffset => feverChaseOffset;
 
     /// <summary>
     /// デバッグ用にランタイム値を一括反映する

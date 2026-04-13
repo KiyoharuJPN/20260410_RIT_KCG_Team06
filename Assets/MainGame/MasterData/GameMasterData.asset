@@ -24,3 +24,6 @@ MonoBehaviour:
   feverPerCoin: 1
   feverPerEnemyDefeat: 2
   feverDecreasePerSecondDuringFever: 0.6
+  feverFlySpeed: 10
+  feverChaseSpeed: 10
+  feverChaseOffset: -2

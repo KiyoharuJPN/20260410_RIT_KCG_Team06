@@ -27,17 +27,27 @@ public class EnemyBase : MonoBehaviour
     [Tooltip("移動の距離")]
     protected float distance = 2;
     public void SetDistance(float dist) => distance = dist;
-
+    
 
     // 初期化
     virtual protected void Start()
     {
+        EnemyManager.Instance.AddEnemy(this);
         animator = GetComponent<Animator>();
     }
 
     // HP処理
     virtual protected void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerLives playerLives = collision.gameObject.GetComponent<PlayerLives>();
+            if (playerLives != null)
+            {
+                playerLives.TakeDamage(1);
+            }
+        }
+
         if (collision.gameObject.CompareTag("PlayerAttack"))
         {
             // エフェクトの生成
@@ -49,7 +59,7 @@ public class EnemyBase : MonoBehaviour
             // ダメージ処理
             hp -= 1f; // 仮のダメージ値
 
-            if (FeverGaugeManager.Instance.IsFever) hp = 0; // フィーバー中は即死
+            //if (FeverGaugeManager.Instance.IsFever) hp = 0; // フィーバー中は即死
 
             if (hp <= 0)
             {
@@ -76,5 +86,10 @@ public class EnemyBase : MonoBehaviour
         }
 
         animator.SetBool("FacingRight", FacingRight);
+    }
+
+    private void OnDestroy()
+    {
+        EnemyManager.Instance.RemoveEnemy(this);
     }
 }

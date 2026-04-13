@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
 
 /// <summary>
 /// プレイヤーの操作を管理するクラス
@@ -58,6 +60,12 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private float m_chargeReadyTimer = 0f;
 
+    /// <summary>
+    /// hp関連
+    /// </summary>
+    private PlayerLives lives;
+    private GameObject feverEffect;
+
     void Awake()
     {
         // 各コンポーネントを取得して変数に格納
@@ -68,6 +76,9 @@ public class PlayerController : MonoBehaviour
         playerStateMachine = GetComponent<PlayerStateMachine>();
         groundChecker      = GetComponent<GroundChecker>();
         rb                 = GetComponent<Rigidbody2D>();
+
+        lives = GetComponent<PlayerLives>();
+        feverEffect = transform.Find("FeverEffect").gameObject;
     }
 
     void Update()
@@ -94,6 +105,10 @@ public class PlayerController : MonoBehaviour
             case PlayerState.Falling:
                 // Falling状態の処理
                 HandleFall();
+                break;
+            case PlayerState.Fevering:
+                // Fevering状態の処理
+                HandleFevering();
                 break;
         }
     }
@@ -187,11 +202,90 @@ public class PlayerController : MonoBehaviour
         }
 
         // 地面に着いたら重力スケールをデフォルトに戻してIdle状態へ
-        if (groundChecker.IsGrounded)
+        if (groundChecker.IsGrounded && Mathf.Abs(rb.linearVelocity.y) <= 0.01f)
         {
             // 重力を通常の1.0fに戻す
             rb.gravityScale = 1.0f;
             playerStateMachine.ChangeState(PlayerState.Idle);
         }
+    }
+
+    /// <summary>
+    /// fevering状態の処理を行うメソッド
+    /// 移動して空中でエンターキーを押すとパンチを実行
+    /// </summary>
+    void HandleFevering()
+    {
+        FeveringMovement();
+
+        // 空中でキーが押されたらパンチ実行（クールタイムなし）
+        if (inputReceiver.IsPressed)
+        {
+            playerPunchExecutor.ExecutePunch();
+        }
+    }
+
+    /// <summary>
+    /// フィーバー中移動用のメソッド
+    /// </summary>
+    void FeveringMovement()
+    {
+        List<EnemyBase> enemies = EnemyManager.Instance.GetLiveEnemy();
+        if (enemies.Count == 0)
+        {
+            transform.position += Vector3.up * masterData.FeverFlySpeed * Time.deltaTime;
+        }
+        else
+        {
+            // 最も近い敵を見つける
+            EnemyBase closestEnemy = null;
+            float closestDistance = float.MaxValue;
+            foreach (EnemyBase enemy in enemies)
+            {
+                if (enemy.transform.position.y < transform.position.y)
+                {
+                    continue; // プレイヤーより下にいる敵は無視
+                }
+                float distance = enemy.transform.position.y - transform.position.y;
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestEnemy = enemy;
+                }
+            }
+            Debug.LogWarning("Closest Enemy: " + (closestEnemy != null ? closestEnemy.name : "None") + ", Distance: " + closestDistance);
+            // 最も近い敵に向かって移動する
+            if (closestEnemy != null)
+            {
+                Vector2 targetPosition = new Vector2(0, masterData.FeverChaseOffset) + (Vector2)closestEnemy.transform.position;
+                // Frameごとにプレイヤーの位置を更新して、敵に向かって移動する
+                transform.position = Vector2.MoveTowards(
+                    transform.position,  // 現在の位置
+                    targetPosition,      // ターゲットの位置（最も近い敵の位置）
+                    masterData.FeverChaseSpeed * Time.deltaTime  // Frameごとの移動距離
+                );
+            }
+            else
+            {
+                // 敵がいない場合は上昇する
+                transform.position += Vector3.up * masterData.FeverFlySpeed * Time.deltaTime;
+            }
+        }
+    }
+    /// フィーバー状態を開始するメソッド
+    public void StartFever()
+    {
+        lives.SetInvincible( true );
+        feverEffect.SetActive(true);
+        rb.gravityScale = 0;
+        playerStateMachine.ChangeState(PlayerState.Fevering);
+    }
+    /// フィーバー状態を終了するメソッド
+    public void EndFever()
+    {
+        lives.SetInvincible( false );
+        feverEffect.SetActive( false );
+        playerStateMachine.ChangeState(PlayerState.Jumping);
+        rb.gravityScale = masterData.JumpGravityScale;
     }
 }
