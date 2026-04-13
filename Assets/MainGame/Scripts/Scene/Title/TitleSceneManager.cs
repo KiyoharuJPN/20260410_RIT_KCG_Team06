@@ -115,6 +115,7 @@ public class TitleSceneManager : MonoBehaviour
 
         InitializeVideoPlayer();
 
+        AudioManager.Instance.PlaySE(AudioName.SEName.SYSOK_SE_NAME);
         isPreparingVideo = true;
         startVideoPlayer.Prepare();
     }

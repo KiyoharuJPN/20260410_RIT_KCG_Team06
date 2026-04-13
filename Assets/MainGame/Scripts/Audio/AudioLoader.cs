@@ -11,7 +11,12 @@ public class AudioLoader : MonoBehaviour
         AudioManager.Instance.LoadBGM(BGMName.TITLE_BGM_NAME, "Audio/BGM/ORARA_BGM_Title");
         AudioManager.Instance.LoadBGM(BGMName.RESULT_BGM_NAME, "Audio/BGM/ORARA_BGM_Result");
 
-        //AudioManager.Instance.LoadSE(SEName.TITLE_SE_NAME, "Audio/SE/TitleSE");
+        AudioManager.Instance.LoadSE(SEName.COIN_SE_NAME, "Audio/SE/SE_Coin");
+        AudioManager.Instance.LoadSE(SEName.DAMAGE_SE_NAME, "Audio/SE/SE_Damage");
+        AudioManager.Instance.LoadSE(SEName.JUMP_SE_NAME, "Audio/SE/SE_Jump");
+        AudioManager.Instance.LoadSE(SEName.PUNCH_SE_NAME, "Audio/SE/SE_Punch");
+        AudioManager.Instance.LoadSE(SEName.RESULT_SE_NAME, "Audio/SE/SE_Result");
+        AudioManager.Instance.LoadSE(SEName.SYSOK_SE_NAME, "Audio/SE/SE_SysOK");
     }
 
     public void Final()
@@ -21,7 +26,12 @@ public class AudioLoader : MonoBehaviour
         AudioManager.Instance.UnloadBGM(BGMName.TITLE_BGM_NAME);
         AudioManager.Instance.UnloadBGM(BGMName.RESULT_BGM_NAME);
 
-        //AudioManager.Instance.UnloadSE(SEName.TITLE_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.COIN_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.DAMAGE_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.JUMP_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.PUNCH_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.RESULT_SE_NAME);
+        AudioManager.Instance.UnloadSE(SEName.SYSOK_SE_NAME);
     }
 }
 
@@ -37,6 +47,11 @@ namespace AudioName
 
     public static class SEName
     {
-        //public static string TITLE_SE_NAME = "TitleSE";
+        public static string COIN_SE_NAME = "Coin";
+        public static string DAMAGE_SE_NAME = "Damage";
+        public static string JUMP_SE_NAME = "Jump";
+        public static string PUNCH_SE_NAME = "Punch";
+        public static string RESULT_SE_NAME = "Result";
+        public static string SYSOK_SE_NAME = "SysOk";
     }
 }
