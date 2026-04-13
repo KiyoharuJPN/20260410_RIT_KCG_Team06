@@ -33,6 +33,7 @@ public class ResultUI : MonoBehaviour
         scoreText.text = ResultManager.score.ToString() == null ? "0" : ResultManager.score.ToString();
         killText.text = ResultManager.killCount.ToString() == null ? "0" : ResultManager.killCount.ToString();
         coinText.text = ResultManager.coinCount.ToString() == null ? "0" : ResultManager.coinCount.ToString();
+        AudioManager.Instance.PlaySE(SEName.RESULT_SE_NAME);
     }
 
 

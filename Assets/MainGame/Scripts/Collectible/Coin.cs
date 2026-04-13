@@ -1,3 +1,4 @@
+using AudioName;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
@@ -14,5 +15,6 @@ public class Coin : MonoBehaviour
     public void GetCoin()
     {
         ResultManager.Instance.AddCoin();
+        AudioManager.Instance.PlaySE(SEName.COIN_SE_NAME);
     }
 }

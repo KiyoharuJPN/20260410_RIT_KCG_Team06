@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using AudioName;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -71,10 +72,12 @@ public class PlayerLives : MonoBehaviour
     /// </summary>
     public void TakeDamage(int amount)
     {
+        if (IsInvincible) return;
         IsInvincible = true;
         // 残機を減算（0未満にはしない）
         CurrentLives = Mathf.Max(0, CurrentLives - amount);
         OnLivesChanged?.Invoke(CurrentLives);
+        AudioManager.Instance.PlaySE(SEName.DAMAGE_SE_NAME);
 
         Debug.Log($"被弾しました：残機 {CurrentLives + amount} -> {CurrentLives}");
 

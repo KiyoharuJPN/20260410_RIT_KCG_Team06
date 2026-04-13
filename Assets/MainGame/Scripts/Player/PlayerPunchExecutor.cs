@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using AudioName;
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -110,6 +111,7 @@ public class PlayerPunchExecutor : MonoBehaviour
         // パンチ開始：スプライト管理用のプロパティを更新
         LastPunchDirection = direction;
         IsPunching = true;
+        AudioManager.Instance.PlaySE(SEName.PUNCH_SE_NAME);
 
         // 方向に対応したヒットボックスを選択
         GameObject hitbox = direction switch

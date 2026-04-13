@@ -158,6 +158,7 @@ public class PlayerController : MonoBehaviour
                 stageManager.IsBonusStage
             );
             playerStateMachine.ChangeState(PlayerState.Jumping);
+            AudioManager.Instance.PlaySE(SEName.JUMP_SE_NAME);
             return;
         }
 
