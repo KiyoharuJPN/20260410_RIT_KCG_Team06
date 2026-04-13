@@ -21,7 +21,7 @@ public class ResultManager : Singleton<ResultManager>
 
         // 音楽を再生
         AudioManager.Instance.StopBGM(BGMName.TITLE_BGM_NAME);
-        AudioManager.Instance.PlayBGM(BGMName.MAIN_GAME_BGM_NAME);
+        AudioManager.Instance.PlayLoopBGM(BGMName.MAIN_GAME_BGM_NAME);
     }
 
     // Result内容の加算と取得

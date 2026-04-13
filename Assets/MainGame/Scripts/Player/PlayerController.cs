@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using AudioName;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -276,6 +277,8 @@ public class PlayerController : MonoBehaviour
     public void StartFever()
     {
         lives.SetInvincible( true );
+        AudioManager.Instance.StopBGM(BGMName.MAIN_GAME_BGM_NAME);
+        AudioManager.Instance.PlayLoopBGM(BGMName.MAIN_GAME_BGM2_NAME);
         feverEffect.SetActive(true);
         rb.gravityScale = 0;
         playerStateMachine.ChangeState(PlayerState.Fevering);
@@ -284,6 +287,8 @@ public class PlayerController : MonoBehaviour
     public void EndFever()
     {
         lives.SetInvincible( false );
+        AudioManager.Instance.StopBGM(BGMName.MAIN_GAME_BGM2_NAME);
+        AudioManager.Instance.PlayLoopBGM(BGMName.MAIN_GAME_BGM_NAME);
         feverEffect.SetActive( false );
         playerStateMachine.ChangeState(PlayerState.Jumping);
         rb.gravityScale = masterData.JumpGravityScale;

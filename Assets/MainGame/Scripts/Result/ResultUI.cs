@@ -45,6 +45,7 @@ public class ResultUI : MonoBehaviour
                 .SetFadeEase(Ease.OutCubic, Ease.InCubic)
                 .SetFadeColor(Color.black)
                 .ChangeScene("TitleScene");
+            AudioManager.Instance.StopBGM(BGMName.RESULT_BGM_NAME);
         }
     }
 }
