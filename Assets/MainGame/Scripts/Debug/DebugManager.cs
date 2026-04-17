@@ -32,6 +32,12 @@ public class DebugManager : MonoBehaviour
     private string feverPerEnemyDefeatText;
     /// <summary>フィーバー減少量入力</summary>
     private string feverDecreasePerSecondText;
+    /// <summary>フィーバー飛行速度入力</summary>
+    private string feverFlySpeedText;
+    /// <summary>フィーバー追跡速度入力</summary>
+    private string feverChaseSpeedText;
+    /// <summary>フィーバー追跡オフセット入力</summary>
+    private string feverChaseOffsetText;
 
     /// <summary>
     /// 入力欄初期化済みかどうか
@@ -92,6 +98,9 @@ public class DebugManager : MonoBehaviour
         feverPerCoinText = DrawField("FeverPerCoin", feverPerCoinText, areaWidth);
         feverPerEnemyDefeatText = DrawField("FeverPerEnemyDefeat", feverPerEnemyDefeatText, areaWidth);
         feverDecreasePerSecondText = DrawField("FeverDecreasePerSecond", feverDecreasePerSecondText, areaWidth);
+        feverFlySpeedText = DrawField("FeverFlySpeed", feverFlySpeedText, areaWidth);
+        feverChaseSpeedText = DrawField("FeverChaseSpeed", feverChaseSpeedText, areaWidth);
+        feverChaseOffsetText = DrawField("FeverChaseOffset", feverChaseOffsetText, areaWidth);
 
         GUILayout.Space(8.0f);
 
@@ -142,6 +151,9 @@ public class DebugManager : MonoBehaviour
         feverPerCoinText = data.FeverPerCoin.ToString();
         feverPerEnemyDefeatText = data.FeverPerEnemyDefeat.ToString();
         feverDecreasePerSecondText = data.FeverDecreasePerSecondDuringFever.ToString();
+        feverFlySpeedText = data.FeverFlySpeed.ToString();
+        feverChaseSpeedText = data.FeverChaseSpeed.ToString();
+        feverChaseOffsetText = data.FeverChaseOffset.ToString();
 
         isInitialized = true;
     }
@@ -181,6 +193,9 @@ public class DebugManager : MonoBehaviour
         var feverPerCoin = ParseFloat(feverPerCoinText, data.FeverPerCoin);
         var feverPerEnemyDefeat = ParseFloat(feverPerEnemyDefeatText, data.FeverPerEnemyDefeat);
         var feverDecreasePerSecond = ParseFloat(feverDecreasePerSecondText, data.FeverDecreasePerSecondDuringFever);
+        var feverFlySpeed = ParseFloat(feverFlySpeedText, data.FeverFlySpeed);
+        var feverChaseSpeed = ParseFloat(feverChaseSpeedText, data.FeverChaseSpeed);
+        var feverChaseOffset = ParseFloat(feverChaseOffsetText, data.FeverChaseOffset);
 
         data.ApplyRuntimeValues(
             smallJumpPower,
@@ -194,7 +209,10 @@ public class DebugManager : MonoBehaviour
             feverGaugeAmount,
             feverPerCoin,
             feverPerEnemyDefeat,
-            feverDecreasePerSecond);
+            feverDecreasePerSecond,
+            feverFlySpeed,
+            feverChaseSpeed,
+            feverChaseOffset);
     }
 
     /// <summary>

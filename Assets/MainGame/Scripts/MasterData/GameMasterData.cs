@@ -124,7 +124,10 @@ public class GameMasterData : ScriptableObject
         float newFeverGaugeAmount,
         float newFeverPerCoin,
         float newFeverPerEnemyDefeat,
-        float newFeverDecreasePerSecondDuringFever)
+        float newFeverDecreasePerSecondDuringFever,
+        float newFeverFlySpeed,
+        float newFeverChaseSpeed,
+        float newFeverChaseOffset)
     {
         smallJumpPower = Mathf.Max(0.0f, newSmallJumpPower);
         largeJumpPower = Mathf.Max(0.0f, newLargeJumpPower);
@@ -141,5 +144,9 @@ public class GameMasterData : ScriptableObject
         feverPerCoin = Mathf.Max(0.0f, newFeverPerCoin);
         feverPerEnemyDefeat = Mathf.Max(0.0f, newFeverPerEnemyDefeat);
         feverDecreasePerSecondDuringFever = Mathf.Max(0.0f, newFeverDecreasePerSecondDuringFever);
+
+        feverFlySpeed = Mathf.Max(0.0f, newFeverFlySpeed);
+        feverChaseSpeed = Mathf.Max(0.0f, newFeverChaseSpeed);
+        feverChaseOffset = newFeverChaseOffset;
     }
 }
