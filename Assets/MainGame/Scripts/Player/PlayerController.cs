@@ -233,66 +233,83 @@ public class PlayerController : MonoBehaviour
     void FeveringMovement()
     {
         List<EnemyBase> enemies = EnemyManager.Instance.GetLiveEnemy();
-        if (enemies.Count == 0)
+
+        // 追尾対象（自分より上で最も近い敵）を探す
+        EnemyBase closestEnemy = null;
+        float closestDistance = float.MaxValue;
+
+        foreach (EnemyBase enemy in enemies)
         {
-            transform.position += Vector3.up * masterData.FeverFlySpeed * Time.deltaTime;
+            float dy = enemy.transform.position.y - transform.position.y;
+            // 誤差許容
+            if (dy < 0.5f)
+            {
+                continue;
+            }
+
+            if (dy < closestDistance)
+            {
+                closestDistance = dy;
+                closestEnemy = enemy;
+            }
+        }
+
+        // 目標方向を決める
+        Vector2 moveDir;
+        float speed;
+
+        if (closestEnemy != null)
+        {
+            Vector2 targetPosition = new Vector2(
+                closestEnemy.transform.position.x,
+                closestEnemy.transform.position.y + masterData.FeverChaseOffset);
+
+            Vector2 toTarget = targetPosition - (Vector2)transform.position;
+
+            // 方向のみ使う（速度は常に一定）
+            moveDir = toTarget.sqrMagnitude > 0.0001f ? toTarget.normalized : Vector2.up;
+            speed = masterData.FeverChaseSpeed;
         }
         else
         {
-            // 最も近い敵を見つける
-            EnemyBase closestEnemy = null;
-            float closestDistance = float.MaxValue;
-            foreach (EnemyBase enemy in enemies)
-            {
-                if (enemy.transform.position.y < transform.position.y)
-                {
-                    continue; // プレイヤーより下にいる敵は無視
-                }
-                float distance = enemy.transform.position.y - transform.position.y;
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closestEnemy = enemy;
-                }
-            }
-            Debug.LogWarning("Closest Enemy: " + (closestEnemy != null ? closestEnemy.name : "None") + ", Distance: " + closestDistance);
-            // 最も近い敵に向かって移動する
-            if (closestEnemy != null)
-            {
-                Vector2 targetPosition = new Vector2(0, masterData.FeverChaseOffset) + (Vector2)closestEnemy.transform.position;
-                // Frameごとにプレイヤーの位置を更新して、敵に向かって移動する
-                transform.position = Vector2.MoveTowards(
-                    transform.position,  // 現在の位置
-                    targetPosition,      // ターゲットの位置（最も近い敵の位置）
-                    masterData.FeverChaseSpeed * Time.deltaTime  // Frameごとの移動距離
-                );
-            }
-            else
-            {
-                // 敵がいない場合は上昇する
-                transform.position += Vector3.up * masterData.FeverFlySpeed * Time.deltaTime;
-            }
+            moveDir = Vector2.up;
+            speed = masterData.FeverFlySpeed;
+        }
+
+        transform.position += (Vector3)(moveDir * speed * Time.deltaTime);
+    }
+
+    /// <summary>
+    /// フィーバーエフェクトの表示状態を切り替える
+    /// </summary>
+    public void SetFeverEffectVisible(bool isVisible)
+    {
+        if (feverEffect != null)
+        {
+            feverEffect.SetActive(isVisible);
         }
     }
+
     /// フィーバー状態を開始するメソッド
     public void StartFever()
     {
-        lives.SetInvincible( true );
+        lives.SetInvincible(true);
         AudioManager.Instance.StopBGM(BGMName.MAIN_GAME_BGM_NAME);
         AudioManager.Instance.PlayLoopBGM(BGMName.MAIN_GAME_BGM2_NAME);
-        feverEffect.SetActive(true);
+        SetFeverEffectVisible(true);
         rb.gravityScale = 0;
+        rb.linearVelocity = Vector2.zero;
         playerStateMachine.ChangeState(PlayerState.Fevering);
     }
+
     /// フィーバー状態を終了するメソッド
     public void EndFever()
     {
-        if(lives != null) 
-            lives.SetInvincible( false );
+        if (lives != null)
+            lives.SetInvincible(false);
         AudioManager.Instance.StopBGM(BGMName.MAIN_GAME_BGM2_NAME);
         AudioManager.Instance.PlayLoopBGM(BGMName.MAIN_GAME_BGM_NAME);
-        if(feverEffect != null)
-            feverEffect.SetActive( false );
+        SetFeverEffectVisible(false);
         playerStateMachine.ChangeState(PlayerState.Jumping);
         rb.gravityScale = masterData.JumpGravityScale;
     }

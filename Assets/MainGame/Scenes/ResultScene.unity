@@ -566,6 +566,7 @@ MonoBehaviour:
   killText: {fileID: 899727614}
   coinText: {fileID: 96963684}
   nextStage: {fileID: 1141156710}
+  freezeTime: 2
 --- !u!114 &408243814
 MonoBehaviour:
   m_ObjectHideFlags: 0

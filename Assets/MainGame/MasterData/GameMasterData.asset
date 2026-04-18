@@ -19,11 +19,11 @@ MonoBehaviour:
   fallGravityScale: 20
   scorePerCoin: 100
   scorePerEnemyDefeat: 300
-  timeLimit: 60
+  timeLimit: 90
   feverGaugeAmount: 18
   feverPerCoin: 1
   feverPerEnemyDefeat: 2
-  feverDecreasePerSecondDuringFever: 0.6
-  feverFlySpeed: 10
-  feverChaseSpeed: 10
+  feverDecreasePerSecondDuringFever: 1.8
+  feverFlySpeed: 24
+  feverChaseSpeed: 24
   feverChaseOffset: -2

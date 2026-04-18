@@ -2426,11 +2426,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335345609685655915, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: distance
-      value: 3
+      value: 6.36
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 3.18
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2624,7 +2624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335345609685655915, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: distance
-      value: 4
+      value: 4.98
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalScale.x
@@ -2632,7 +2632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3144,11 +3144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335345609685655915, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: distance
-      value: 4
+      value: 6.36
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 3.18
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4172,11 +4172,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335345609685655915, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: distance
-      value: 4
+      value: 6.36
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.25
+      value: 3.18
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.y

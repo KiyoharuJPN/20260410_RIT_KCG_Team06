@@ -32,7 +32,7 @@ public class PlayerJumpExecutor : MonoBehaviour
         // 長押し時間でジャンプ力を決定
         // 0.5秒未満は小ジャンプ
         // 0.5秒以上は大ジャンプ
-        float jumpPower = holdTime >= 0.5f 
+        float jumpPower = holdTime >= masterData.JumpCooldown 
             ? masterData.LargeJumpPower
             : masterData.SmallJumpPower;
 

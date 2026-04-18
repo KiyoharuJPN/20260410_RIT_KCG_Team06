@@ -117,12 +117,24 @@ MonoBehaviour:
   enemyGenInfos:
   - enemyID: 1
     position: {x: -2.5, y: 2.5}
+    moveSpeed: 0
+    moveDistance: 0
+    hp: 0
   - enemyID: 2
-    position: {x: -2.5, y: 0}
+    position: {x: -2.5, y: -2.5}
+    moveSpeed: 0
+    moveDistance: 0
+    hp: 0
   - enemyID: 3
-    position: {x: 2.5, y: 2.5}
+    position: {x: 1, y: 2.5}
+    moveSpeed: 0
+    moveDistance: 0
+    hp: 0
   - enemyID: 4
-    position: {x: 2.5, y: 0}
+    position: {x: 0, y: -2.5}
+    moveSpeed: 0
+    moveDistance: 0
+    hp: 0
 --- !u!1 &6236466815418869735
 GameObject:
   m_ObjectHideFlags: 0

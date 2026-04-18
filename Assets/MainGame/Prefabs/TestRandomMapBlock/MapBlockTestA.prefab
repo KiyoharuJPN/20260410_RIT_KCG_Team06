@@ -146,7 +146,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eefa49caef529740adc5612c17521a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyGenerator
-  enemyGenInfos: []
+  enemyGenInfos:
+  - enemyID: 4
+    position: {x: 0, y: 0}
+    moveSpeed: 0
+    moveDistance: 0
+    hp: 0
+  - enemyID: 4
+    position: {x: 0, y: 5}
+    moveSpeed: 4
+    moveDistance: 0
+    hp: 0
+  - enemyID: 2
+    position: {x: 0, y: -2}
+    moveSpeed: 3
+    moveDistance: 0
+    hp: 0
 --- !u!1 &5131039213209237140
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,11 +462,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335345609685655915, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: distance
-      value: 5
+      value: -6.3
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.11
+      value: -3.15
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.y
@@ -579,11 +594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335345609685655915, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: distance
-      value: 4.8
+      value: 6.38
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.5
+      value: 3.19
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.y
@@ -711,11 +726,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335345609685655915, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: distance
-      value: 4
+      value: 6.38
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.15
+      value: 3.19
       objectReference: {fileID: 0}
     - target: {fileID: 7349890188012660926, guid: 958efbc61bdbce140a466ff7e4c41b64, type: 3}
       propertyPath: m_LocalPosition.y

@@ -1,4 +1,4 @@
-using AudioName;
+﻿using AudioName;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -19,6 +19,16 @@ public class ResultUI : MonoBehaviour
     // 次のステージへ遷移する旨のテキスト(アニメーションがあったらここで作る)
     [SerializeField]
     TMP_Text nextStage;
+    /// <summary>
+    /// 最初の静止時間
+    /// </summary>
+    [SerializeField]
+    private float freezeTime;
+
+    /// <summary>
+    /// 現在時間
+    /// </summary>
+    private float nowTime;
 
 
     private void Awake()
@@ -39,7 +49,9 @@ public class ResultUI : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.enterKey.wasPressedThisFrame)
+        nowTime += Time.deltaTime;
+
+        if (Keyboard.current.enterKey.wasPressedThisFrame && nowTime >= freezeTime)
         {
             SceneChangeManager.Instance
                 .SetFadeDuration(0.4f, 0.3f)
