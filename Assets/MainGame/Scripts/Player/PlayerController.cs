@@ -122,6 +122,9 @@ public class PlayerController : MonoBehaviour
         // 地面にいてキーが押されたらチャージ開始
         if (inputReceiver.IsPressed && groundChecker.IsGrounded)
         {
+            // UIに待機状態を通知
+            JumpGaugeUIEvent.OnChargeReady?.Invoke(true);
+
             playerJumpHandler.StartHold();
             playerStateMachine.ChangeState(PlayerState.Charging);
         }
@@ -133,6 +136,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void HandleCharging()
     {
+        m_chargeReadyTimer += Time.deltaTime;
+
+        // ジャンプチャージUIを更新
+        JumpGaugeUIEvent.OnChargeUpdate?.Invoke(m_chargeReadyTimer);
+
         // キーを離したらChargeReady状態へ（チャージ量を確定）
         if (inputReceiver.IsReleased)
         {
@@ -157,6 +165,10 @@ public class PlayerController : MonoBehaviour
                 playerJumpHandler.HoldDuration,
                 stageManager.IsBonusStage
             );
+            // UIをリセット
+            JumpGaugeUIEvent.OnChargeReady?.Invoke(false);
+            JumpGaugeUIEvent.OnChargeUpdate?.Invoke(0f);
+
             playerStateMachine.ChangeState(PlayerState.Jumping);
             AudioManager.Instance.PlaySE(SEName.JUMP_SE_NAME);
             return;
@@ -166,6 +178,13 @@ public class PlayerController : MonoBehaviour
         if (m_chargeReadyTimer >= CHARGE_CANCEL_DURATION)
         {
             Debug.Log("チャージキャンセル");
+
+            // UIにキャンセル通知
+            JumpGaugeUIEvent.OnChargeCanceled?.Invoke();
+            JumpGaugeUIEvent.OnChargeUpdate?.Invoke(0f);
+
+            m_chargeReadyTimer = 0f;
+
             playerStateMachine.ChangeState(PlayerState.Idle);
         }
     }
